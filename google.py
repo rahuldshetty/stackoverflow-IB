@@ -3,7 +3,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 import re
-
+import stackoverflow as stackapi
+import pprint
 '''
 Custom Google Api to search for top k relevant questions from stackoverflow and get its code
 K can be modified by chaning value in the num_results
@@ -36,6 +37,15 @@ def search_stackcodes(query, site=None, num_results=7):
     return stackcodes
 
 
+def get_all_question_and_answers(text):
+    question_codes = search_stackcodes(text, 'stackoverflow.com')
+    QnA_list = []
+    for code in question_codes:
+        QnA_list.append(stackapi.get_question_and_answers(code))
+    return QnA_list
+
+
 if __name__ == "__main__":
     text = "how to run python"
-    question_codes = search_stackcodes(text, "stackoverflow.com")
+    lists = get_all_question_and_answers(text)
+    pprint.pprint(lists)

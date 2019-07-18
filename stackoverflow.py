@@ -37,9 +37,6 @@ def get_question_by_id(id):
 
     owner = soup.find('div', class_='owner')
     creation_timestamp = owner.find('span', class_='relativetime')['title']
-    user_details = owner.find('div', class_='user-details')
-    userlink = "https://stackoverflow.com" + \
-        user_details.findChildren()[0]['href']
 
     question = {
         'id': id,
@@ -49,16 +46,14 @@ def get_question_by_id(id):
         'is_answered': is_answered,
         'score': vote_count,
         'creation_timestamp': creation_timestamp,
-        'owner': get_owner_details(userlink)
+        'owner': get_owner_details(owner)
     }
     return question
 
 
-def get_owner_details(url):
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
+def get_owner_details(owner_obj):
+    url = "https://stackoverflow.com" + owner_obj.find('a')['href']
     owner = {'url': url}
-
     id = None
     temps = url.split('/')
     for item in temps:
@@ -66,36 +61,32 @@ def get_owner_details(url):
             id = int(item)
             break
 
-    name = soup.find(
-        'h2', class_='profile-user--name').find('div', class_='grid--cell').text
-    owner['name'] = name
+    user_details = owner_obj.find('div', class_='user-details')
 
-    reputation = int(re.sub(r'[^0-9]', '', soup.find('div',
-                                                     class_='my12').find('div', class_='fs-title').text))
+    name = user_details.find('a').text
+    owner['name'] = name
+    reputation = int(re.sub(r'[^0-9]', '', user_details.find('span',
+                                                             class_='reputation-score').text))
     owner['score'] = reputation
 
-    gold = int(re.sub(r'[^0-9]', '', soup.find('div',
-                                               class_='badge1-alternate')['title']) if soup.find('div',
-                                                                                                 class_='badge1-alternate') is not None else '0')
-    silver = int(re.sub(r'[^0-9]', '', soup.find('div',
-                                                 class_='badge2-alternate')['title'] if soup.find('div',
-                                                                                                  class_='badge2-alternate') is not None else '0'))
-    bronze = int(re.sub(r'[^0-9]', '', soup.find('div',
-                                                 class_='badge3-alternate')['title'] if soup.find('div',
-                                                                                                  class_='badge3-alternate') is not None else '0'))
+    Flair = user_details.find('div', class_='-flair')
+    gold = 0
+    silver = 0
+    bronze = 0
+    for child in Flair.findChildren():
+        if child.get('title') is not None:
+            if "gold" in child['title']:
+                gold = int(re.sub(r'[^0-9]', '', child['title']))
+            if "silver" in child['title']:
+                silver = int(re.sub(r'[^0-9]', '', child['title']))
+            if "bronze" in child["title"]:
+                bronze = int(re.sub(r'[^0-9]', '', child['title']))
 
     owner['gold'] = gold
     owner['silver'] = silver
     owner['bronze'] = bronze
+
     owner['id'] = id
-
-    count_ele = soup.find('div', class_='fc-medium mb16')
-    items = count_ele.find_all('div', class_='fc-dark')
-    answer_count = int(re.sub('[^0-9]', '', items[0].text))
-    question_count = int(re.sub('[^0-9]', '', items[1].text))
-
-    owner['answer_count'] = answer_count
-    owner['question_count'] = question_count
 
     return owner
 
@@ -108,19 +99,33 @@ def get_answers_for_question(id):
 
     for answer in soup.find_all('div', class_="answer"):
         ans_id = int(re.sub(r'[^0-9]', '', answer['id']))
-
+        ans_url = "https://stackoverflow.com/a/"+str(ans_id)
         score = int(re.sub(r'[^0-9]', '', answer.find('div',
                                                       class_='js-vote-count')['data-value']))
 
         users = answer.find_all('div', class_='post-signature')
-        owner_detail = users[len(users)-1]
-        owner_url = "https://stackoverflow.com" + \
-            owner_detail.find('a')['href']
 
+        owner_detail = users[len(users)-1]
+        owner = {}
+
+        if owner_detail.find('a') is not None:
+            owner = get_owner_details(owner_detail)
+        else:
+            tempid = int(re.sub(r'[^0-9]', '', owner_detail.find(
+                'div', class_='user-details').text))
+            owner = {
+                'gold': 0,
+                'silver': 0,
+                'bronze': 0,
+                'score': 0,
+                'id': tempid
+            }
         answer_dict = {
             'id': ans_id,
             'score': score,
-            'owner': get_owner_details(owner_url)
+            'owner': owner,
+            "url": ans_url,
+            'creation_timestamp': owner_detail.find('span', class_='relativetime')['title']
         }
 
         if 'accepted-answer' in answer['class']:
