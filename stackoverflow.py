@@ -10,6 +10,16 @@ Custom Stackoverflow API for getting user,question and answer details
 '''
 
 
+def process_date(date_string):
+    MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    date_string = date_string[:10]
+    y, m, d = date_string.split('-')
+    m = int(m)
+    m = MONTHS[m-1]
+    return str(d) + " " + m + " " + y
+
+
 def process_text(body):
     soup = BeautifulSoup(body, features="html.parser")
     text = soup.text
@@ -45,7 +55,7 @@ def get_question_by_id(id):
         'url': url,
         'is_answered': is_answered,
         'score': vote_count,
-        'creation_timestamp': creation_timestamp,
+        'creation_timestamp': process_date(creation_timestamp),
         'owner': get_owner_details(owner)
     }
     return question
@@ -128,7 +138,7 @@ def get_answers_for_question(id):
             'score': score,
             'owner': owner,
             "url": ans_url,
-            'creation_timestamp': timestamp
+            'creation_timestamp': process_date(timestamp)
         }
 
         if 'accepted-answer' in answer['class']:
