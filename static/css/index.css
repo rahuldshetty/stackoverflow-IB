@@ -1,0 +1,43 @@
+body{
+    background:#212121;    
+}
+
+.nav-wrapper{
+    background: #f44336;
+}
+
+.loader {
+  position: absolute;
+  margin: auto;
+  top: 50vh;
+  bottom: 50vh;
+  left: 0;
+  right: 0;
+}
+
+#loaderID{
+  display: none;
+}
+
+#searchBtn{
+  cursor: pointer;
+}
+
+.noUi-connect {
+	background: #f44336;
+}
+.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+	background: #f44336;
+}
+.noUi-target.noUi-horizontal .noUi-tooltip {
+	background-color: #f44336;
+}
+
+#test-slider{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.row{
+  margin-bottom: 0px;
+}

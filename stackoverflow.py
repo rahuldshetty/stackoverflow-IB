@@ -104,15 +104,18 @@ def get_answers_for_question(id):
                                                       class_='js-vote-count')['data-value']))
 
         users = answer.find_all('div', class_='post-signature')
-
-        owner_detail = users[len(users)-1]
+        owner_detail = None
+        if len(users) != 0:
+            owner_detail = users[len(users)-1]
         owner = {}
 
-        if owner_detail.find('a') is not None:
+        timestamp = None
+        if owner_detail is not None and owner_detail.find('a') is not None:
             owner = get_owner_details(owner_detail)
+            timestamp = owner_detail.find(
+                'span', class_='relativetime')['title']
         else:
-            tempid = int(re.sub(r'[^0-9]', '', owner_detail.find(
-                'div', class_='user-details').text))
+            tempid = None
             owner = {
                 'gold': 0,
                 'silver': 0,
@@ -125,7 +128,7 @@ def get_answers_for_question(id):
             'score': score,
             'owner': owner,
             "url": ans_url,
-            'creation_timestamp': owner_detail.find('span', class_='relativetime')['title']
+            'creation_timestamp': timestamp
         }
 
         if 'accepted-answer' in answer['class']:

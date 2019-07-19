@@ -10,6 +10,8 @@ Custom Google Api to search for top k relevant questions from stackoverflow and 
 K can be modified by chaning value in the num_results
 '''
 
+ADDITION_SEARCH = 3
+
 
 def extract_stack_code(url):
     # identify the stackcode from the url
@@ -20,7 +22,7 @@ def extract_stack_code(url):
     return code[0] if len(code) == 1 else None
 
 
-def search_stackcodes(query, site=None, num_results=7):
+def search_stackcodes(query, site=None, num_results=5):
     # identify all the stackcodes for the questions given in query
     url = "http://www.google.com/search?q="+query + \
         (" site:"+site if site is not None else "") + "&num="+str(num_results)
@@ -37,8 +39,11 @@ def search_stackcodes(query, site=None, num_results=7):
     return stackcodes
 
 
-def get_all_question_and_answers(text):
-    question_codes = search_stackcodes(text, 'stackoverflow.com')
+def get_all_question_and_answers(text, num_results=5):
+
+    question_codes = search_stackcodes(
+        query=text, site='stackoverflow.com', num_results=num_results + ADDITION_SEARCH)
+    question_codes = list(set(question_codes))[:num_results]
     QnA_list = []
     for code in question_codes:
         QnA_list.append(stackapi.get_question_and_answers(code))

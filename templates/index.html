@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stack Overflow Phoenix Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+
+
+<body>
+    </head>
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col s12 m12 l12">
+
+                <div class="row">
+                    <nav class="animated zoomIn delay-0.2s">
+                        <div class="nav-wrapper navbar-fixed">
+                            <form method="POST" action="/search">
+                                <div class="input-field">
+                                    <input id="search" type="search" placeholder="Enter question to search" name="query"
+                                        required>
+
+
+                                    <label class=" label-icon" for="search">
+                                        <i class="material-icons" id="searchBtn">search</i>
+                                    </label>
+                                    <i class="material-icons" id="closeBtn">close</i>
+
+                                    <input id="sliderValueInput" type="hidden" name='numberresults'
+                                        style="display: none;">
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="row animated zoomIn delay-0.4s">
+                    <label>
+                        Search Items
+                    </label>
+                    <div id="test-slider">
+                    </div>
+                    <label class="left">Faster</label>
+                    <label class="right">Slower</label>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="loaderID">
+            <div class="preloader-wrapper active loader">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/nouislider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/wNumb.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <script>
+        var slider = document.getElementById('test-slider');
+
+        noUiSlider.create(slider, {
+            start: 5,
+            connect: 'lower',
+            step: 1,
+            name: 'numberresults',
+            orientation: 'horizontal',
+            range: {
+                'min': 1,
+                'max': 20
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
+
+        slider.noUiSlider.on("change", function () {
+            document.getElementById('sliderValueInput').value = slider.innerText;
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+        });
+
+        window.addEventListener("beforeunload", function (e) {
+            document.getElementById('loaderID').style.display = 'inline-block';
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const form = document.createElement('form');
+            form.method = "POST";
+            form.action = "/search";
+            form.style.display = 'none';
+
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'text';
+            hiddenField.name = 'query';
+            hiddenField.value = document.getElementById('search').value;
+
+            const hiddenNumber = document.createElement('input');
+            hiddenNumber.type = 'text';
+            hiddenNumber.name = 'numberresults';
+            hiddenNumber.value = slider.innerText;
+
+            form.appendChild(hiddenField);
+            form.appendChild(hiddenNumber)
+            document.body.appendChild(form);
+            form.submit();
+        });
+
+
+    </script>
+
+</body>
+
+</html>
