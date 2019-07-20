@@ -39,6 +39,9 @@
 
                                     <input id="sliderValueInput" type="hidden" name='numberresults'
                                         style="display: none;" value="5">
+
+                                    <input id="resultValueInput" type="hidden" name='num_search_results'
+                                        style="display: none;" value="3">
                                 </div>
                             </form>
                         </div>
@@ -53,6 +56,15 @@
                     </div>
                     <label class="left">Faster</label>
                     <label class="right">Slower</label>
+                </div>
+
+
+                <div class="row animated zoomIn delay-0.4s">
+                    <label>
+                        Number Of Search Results From Each Page
+                    </label>
+                    <div id="result_slider">
+                    </div>
                 </div>
 
             </div>
@@ -102,9 +114,31 @@
             })
         });
 
+        var slider2 = document.getElementById('result_slider');
+
+        noUiSlider.create(slider2, {
+            start: 3,
+            connect: 'lower',
+            step: 1,
+            name: 'num_search_results',
+            orientation: 'horizontal',
+            range: {
+                'min': 1,
+                'max': 20
+            },
+            format: wNumb({
+                decimals: 0
+            })
+        });
+
         slider.noUiSlider.on("change", function () {
             document.getElementById('sliderValueInput').value = slider.innerText;
         });
+
+        slider2.noUiSlider.on("change", function () {
+            document.getElementById('resultValueInput').value = slider2.innerText;
+        });
+
 
         document.getElementById('closeBtn').addEventListener('click', () => {
             document.getElementById('search').value = '';
@@ -130,8 +164,15 @@
             hiddenNumber.name = 'numberresults';
             hiddenNumber.value = slider.innerText;
 
+
+            const hiddenNumber2 = document.createElement('input');
+            hiddenNumber2.type = 'text';
+            hiddenNumber2.name = 'num_search_results';
+            hiddenNumber2.value = slider2.innerText;
+
             form.appendChild(hiddenField);
             form.appendChild(hiddenNumber)
+            form.appendChild(hiddenNumber2)
             document.body.appendChild(form);
             form.submit();
         });

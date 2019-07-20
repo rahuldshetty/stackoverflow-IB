@@ -10,13 +10,19 @@ def index():
     return render_template('index.html')
 
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('error.html')
+
+
 @app.route('/search', methods=['POST'])
 def search():
     text = request.form['query']
     number = int(request.form['numberresults'])
+    result_count = int(request.form['num_search_results'])
     quest_answers = get_all_question_and_answers(text=text, num_results=number)
 
-    answers = process_predict(quest_answers)
+    answers = process_predict(quest_answers, result_count)
 
     settings = {
         "num_results": number

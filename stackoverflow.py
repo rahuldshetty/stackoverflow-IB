@@ -95,14 +95,15 @@ def get_owner_details(owner_obj):
         gold = 0
         silver = 0
         bronze = 0
-        for child in Flair.findChildren():
-            if child.get('title') is not None:
-                if "gold" in child['title']:
-                    gold = int(re.sub(r'[^0-9]', '', child['title']))
-                if "silver" in child['title']:
-                    silver = int(re.sub(r'[^0-9]', '', child['title']))
-                if "bronze" in child["title"]:
-                    bronze = int(re.sub(r'[^0-9]', '', child['title']))
+        if Flair is not None:
+            for child in Flair.findChildren():
+                if child.get('title') is not None:
+                    if "gold" in child['title']:
+                        gold = int(re.sub(r'[^0-9]', '', child['title']))
+                    if "silver" in child['title']:
+                        silver = int(re.sub(r'[^0-9]', '', child['title']))
+                    if "bronze" in child["title"]:
+                        bronze = int(re.sub(r'[^0-9]', '', child['title']))
 
         owner['gold'] = gold
         owner['silver'] = silver
@@ -133,8 +134,10 @@ def get_answers_for_question(id):
         timestamp = None
         if owner_detail is not None and owner_detail.find('a') is not None:
             owner = get_owner_details(owner_detail)
-            timestamp = owner_detail.find(
-                'span', class_='relativetime')['title']
+            timestamp = None
+            if owner_detail.find('span', class_='relativetime') is not None:
+                timestamp = owner_detail.find(
+                    'span', class_='relativetime')['title']
         else:
             tempid = None
             owner = {

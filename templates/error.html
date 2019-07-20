@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ text }} - Phoenix Search </title>
+    <title>Error! - Phoenix Search</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nouislider.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+
 
 <body>
     </head>
@@ -19,7 +21,6 @@
 
 
         <div class="row">
-
             <div class="col s12 m12 l12">
 
                 <div class="row">
@@ -27,8 +28,8 @@
                         <div class="nav-wrapper navbar-fixed">
                             <form method="POST" action="/search">
                                 <div class="input-field">
-                                    <input id="search" type="search" value="{{ text }}"
-                                        placeholder="Enter question to search" name="query" required>
+                                    <input id="search" type="search" placeholder="Enter question to search" name="query"
+                                        required>
 
 
                                     <label class=" label-icon" for="search">
@@ -37,7 +38,7 @@
                                     <i class="material-icons" id="closeBtn">close</i>
 
                                     <input id="sliderValueInput" type="hidden" name='numberresults'
-                                        style="display: none;" value="{{ settings['num_results'] }}">
+                                        style="display: none;" value="5">
 
                                     <input id="resultValueInput" type="hidden" name='num_search_results'
                                         style="display: none;" value="3">
@@ -47,94 +48,44 @@
                     </nav>
                 </div>
 
-                <div class="row">
-
-                    <div class="row animated zoomIn delay-0.4s">
-                        <label>
-                            Search Items
-                        </label>
-                        <div id="test-slider"></div>
-                        <label class="left">Faster</label>
-                        <label class="right">Slower</label>
+                <div class="row animated zoomIn delay-0.4s">
+                    <label>
+                        Search Items
+                    </label>
+                    <div id="test-slider">
                     </div>
-
-                    <div class="row animated zoomIn delay-0.4s">
-                        <label>
-                            Number Of Search Results From Each Page
-                        </label>
-                        <div id="result_slider"></div>
-                    </div>
-
+                    <label class="left">Faster</label>
+                    <label class="right">Slower</label>
                 </div>
 
 
-
-                <div class="row">
-                    <div clas="col s12 m12 l12">
-                        <div class="card" style="background-color:#424242">
-
-                            <div class="card-content white-text">
-                                <span class="card-title">Top Answers</span>
-                                <table class="white-text centered stripped">
-                                    <thead>
-                                        <tr>
-                                            <th>Link</th>
-                                            <th>Score</th>
-                                            <th>Owner Reputation</th>
-                                            <th>Owner Badges(Gold/Silver/Bronze)</th>
-                                            <th>Probability</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="white-text">
-                                        {% for i in range(answers|length) %}
-                                        <tr style="background-color:#424242">
-                                            <td><a class="red-text" href="{{ answers[i][0] }}">Answer Link</a></td>
-                                            <td> {{ answers[i][2] }} </td>
-                                            <td>{{ answers[i][3] }}</td>
-                                            <td>{{ answers[i][4] + "/" + answers[i][5] + "/" + answers[i][6] }}</td>
-                                            <td>{{ answers[i][8][:4] }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div class="row animated zoomIn delay-0.6s">
+                    <label>
+                        Number Of Search Results From Each Page
+                    </label>
+                    <div id="result_slider">
                     </div>
                 </div>
 
             </div>
         </div>
 
-
-        <div class="row">
+        <div class="row animated zoomIn delay-0.8s">
             <div class="col s12 m12 l12">
-                <div class="card" style="background-color:#424242;">
-                    <div class="card-content white-text">
-                        <span class="card-title">Top {{ settings['num_results']  }} Related Questions</span>
-                        <div class="row">
-                            {% for item in data %}
-                            <div class="col c12 m6 l6">
-                                <div class="card hoverable small grey darken-4 animated zoomIn delay-0.7s">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">{{ item['question']['title'] }}</span>
-                                        <p class="block-with-text">{{ item['question']['body'][:] }} </p>
-                                    </div>
-                                    <div class="card-action red-text">
-                                        <a class="red-text" href="{{ item['question']['url'] }}">Link</a>
-                                        <a class="red-text" href="{{ item['question']['url'] }}">Score:
-                                            {{ item['question']['score'] }}</a>
-                                        <a class="red-text" href="{{ item['question']['url'] }}">Date:
-                                            {{ item['question']['creation_timestamp'] }}</a>
+                <div class="card medium" style="background-color:#424242">
 
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
+                    <div class="card-content white-text center">
+                        <h1 class="">404!</h1>
+                        <p>
+                            The page you are trying to reach is currently unavailable right now. Please try again later
+                            or
+                            make sure you typed in the correct url.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
         <div id="loaderID">
@@ -152,7 +103,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -166,7 +116,7 @@
         var slider = document.getElementById('test-slider');
 
         noUiSlider.create(slider, {
-            start: `{{ settings['num_results'] }}`,
+            start: 5,
             connect: 'lower',
             step: 1,
             name: 'numberresults',
@@ -197,15 +147,14 @@
             })
         });
 
-
         slider.noUiSlider.on("change", function () {
             document.getElementById('sliderValueInput').value = slider.innerText;
         });
 
-
         slider2.noUiSlider.on("change", function () {
             document.getElementById('resultValueInput').value = slider2.innerText;
         });
+
 
         document.getElementById('closeBtn').addEventListener('click', () => {
             document.getElementById('search').value = '';

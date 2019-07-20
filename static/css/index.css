@@ -33,7 +33,7 @@ body{
 	background-color: #f44336;
 }
 
-#test-slider{
+#test-slider #result_slider{
   margin-top: 5px;
   margin-bottom: 5px;
 }
