@@ -11,6 +11,8 @@ Custom Stackoverflow API for getting user,question and answer details
 
 
 def process_date(date_string):
+    if date_string is None:
+        return None
     MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     date_string = date_string[:10]
@@ -34,7 +36,7 @@ def get_question_by_id(id):
     url = "https://stackoverflow.com/questions/"+str(id)+"/"
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
-    title = process_text(soup.find('a', class_="question-hyperlink").text)
+    title = soup.find('a', class_="question-hyperlink").text
     body = process_text(soup.find('div', class_="post-text").text)
 
     vote_count = int(soup.find('div', class_='js-vote-count').text)
@@ -62,42 +64,51 @@ def get_question_by_id(id):
 
 
 def get_owner_details(owner_obj):
-    url = "https://stackoverflow.com" + owner_obj.find('a')['href']
-    owner = {'url': url}
+    url = None
+    if owner_obj.find('a') is not None:
+        url = "https://stackoverflow.com" + owner_obj.find('a')['href']
+    owner = {'url': url, 'name': None, 'score': 0,
+             'gold': 0, 'silver': 0, 'bronze': 0, 'id': None}
+
     id = None
-    temps = url.split('/')
-    for item in temps:
-        if re.match(r'[0-9]+', item):
-            id = int(item)
-            break
+    if url is not None:
+        temps = url.split('/')
+        for item in temps:
+            if re.match(r'[0-9]+', item):
+                id = int(item)
+                break
 
     user_details = owner_obj.find('div', class_='user-details')
+    if user_details is not None:
+        name = None
+        if user_details.find('a') is not None:
+            name = user_details.find('a').text
+        owner['name'] = name
 
-    name = user_details.find('a').text
-    owner['name'] = name
-    reputation = int(re.sub(r'[^0-9]', '', user_details.find('span',
-                                                             class_='reputation-score').text))
-    owner['score'] = reputation
+        reputation = 0
+        if user_details.find('span', class_='reputation-score') is not None:
+            reputation = int(re.sub(r'[^0-9]', '', user_details.find('span',
+                                                                     class_='reputation-score').text))
+        owner['score'] = reputation
 
-    Flair = user_details.find('div', class_='-flair')
-    gold = 0
-    silver = 0
-    bronze = 0
-    for child in Flair.findChildren():
-        if child.get('title') is not None:
-            if "gold" in child['title']:
-                gold = int(re.sub(r'[^0-9]', '', child['title']))
-            if "silver" in child['title']:
-                silver = int(re.sub(r'[^0-9]', '', child['title']))
-            if "bronze" in child["title"]:
-                bronze = int(re.sub(r'[^0-9]', '', child['title']))
+        Flair = user_details.find('div', class_='-flair')
+        gold = 0
+        silver = 0
+        bronze = 0
+        for child in Flair.findChildren():
+            if child.get('title') is not None:
+                if "gold" in child['title']:
+                    gold = int(re.sub(r'[^0-9]', '', child['title']))
+                if "silver" in child['title']:
+                    silver = int(re.sub(r'[^0-9]', '', child['title']))
+                if "bronze" in child["title"]:
+                    bronze = int(re.sub(r'[^0-9]', '', child['title']))
 
-    owner['gold'] = gold
-    owner['silver'] = silver
-    owner['bronze'] = bronze
+        owner['gold'] = gold
+        owner['silver'] = silver
+        owner['bronze'] = bronze
 
     owner['id'] = id
-
     return owner
 
 
@@ -127,6 +138,8 @@ def get_answers_for_question(id):
         else:
             tempid = None
             owner = {
+                'url': None,
+                'name': 0,
                 'gold': 0,
                 'silver': 0,
                 'bronze': 0,

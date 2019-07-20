@@ -47,6 +47,9 @@ def get_all_question_and_answers(text, num_results=5):
     QnA_list = []
     for code in question_codes:
         QnA_list.append(stackapi.get_question_and_answers(code))
+
+    # QnA_list = sorted(
+    #     QnA_list, key=lambda x: x['question']['score'], reverse=True)
     return QnA_list
 
 

@@ -1,5 +1,6 @@
 from flask import *
 from google_search import *
+from classifier import *
 
 app = Flask(__name__)
 
@@ -15,11 +16,13 @@ def search():
     number = int(request.form['numberresults'])
     quest_answers = get_all_question_and_answers(text=text, num_results=number)
 
+    answers = process_predict(quest_answers)
+
     settings = {
         "num_results": number
     }
 
-    return render_template('search.html', text=text, data=quest_answers, settings=settings)
+    return render_template('search.html', text=text, data=quest_answers, settings=settings, answers=answers)
 
 
 if __name__ == "__main__":

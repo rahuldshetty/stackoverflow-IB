@@ -63,10 +63,10 @@
                             <div class="row">
                                 {% for item in data %}
                                 <div class="col c12 m6 l6">
-                                    <div class="card small grey darken-4 animated zoomIn delay-0.7s">
+                                    <div class="card hoverable small grey darken-4 animated zoomIn delay-0.7s">
                                         <div class="card-content white-text">
                                             <span class="card-title">{{ item['question']['title'] }}</span>
-                                            <p class="">{{ item['question']['body'][:150] }}</p>
+                                            <p class="block-with-text">{{ item['question']['body'][:] }} </p>
                                         </div>
                                         <div class="card-action red-text">
                                             <a class="red-text" href="{{ item['question']['url'] }}">Link</a>
