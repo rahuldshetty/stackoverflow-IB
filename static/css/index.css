@@ -71,3 +71,8 @@ body{
   /* bg color = bg color under block */
   
 }
+
+.github-link{
+  width: 45px;
+  height: 45px;
+}

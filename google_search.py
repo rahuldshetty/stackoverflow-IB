@@ -13,6 +13,17 @@ K can be modified by chaning value in the num_results
 ADDITION_SEARCH = 3
 
 
+def process_google_query(query):
+    tags = ["'", '"', '|', '(', ')', '-', '~', '+']
+    others = ['intitle:', 'allintitle:', 'inurl:', 'allinurl:',
+              'intext:', 'allintext:', 'filetype:', 'related:']
+    for tag in tags:
+        query = query.replace(tag, '')
+    for tag in others:
+        query = query.replace(tag, '"'+tag+'"')
+    return query
+
+
 def extract_stack_code(url):
     # identify the stackcode from the url
     regex_syntax = "https://stackoverflow\.com/questions/" + \
@@ -24,6 +35,7 @@ def extract_stack_code(url):
 
 def search_stackcodes(query, site=None, num_results=5):
     # identify all the stackcodes for the questions given in query
+    query = process_google_query(query)
     url = "http://www.google.com/search?q="+query + \
         (" site:"+site if site is not None else "") + "&num="+str(num_results)
     stackcodes = []
