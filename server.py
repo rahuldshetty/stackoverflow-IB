@@ -1,6 +1,7 @@
 from flask import *
 from google_search import *
 from classifier import *
+from os import environ
 
 app = Flask(__name__)
 
@@ -32,4 +33,5 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0',
+            port=environ.get("PORT", 5000), threaded=False)
