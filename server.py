@@ -2,6 +2,7 @@ from flask import *
 from classifier import *
 from os import environ
 from indexer import *
+import requests
 
 app = Flask(__name__)
 
@@ -33,6 +34,16 @@ def search():
     return render_template('search.html', text=text, data=quest_answers, settings=settings, answers=answers)
 
 
+def download():
+    link = 'https://raw.githubusercontent.com/rahuldshetty/stackoverflow-IBM/master/indexdir/MAIN_sru8vf8i6mlyp5l3.seg'
+    path = 'indexdir/MAIN_sru8vf8i6mlyp5l3.seg'
+    r = requests.get(link)
+    with open(path, 'wb') as f:
+        f.write(r.content)
+
+
 if __name__ == "__main__":
+    if os.path.exists('indexdir/MAIN_sru8vf8i6mlyp5l3.seg') == False:
+        download()
     app.run(debug=True,  host='0.0.0.0',
             port=environ.get("PORT", 5000), threaded=False)
