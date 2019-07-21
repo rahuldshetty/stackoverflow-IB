@@ -1,7 +1,7 @@
 from flask import *
-from google_search import *
 from classifier import *
 from os import environ
+from indexer import *
 
 app = Flask(__name__)
 
@@ -21,7 +21,8 @@ def search():
     text = request.form['query']
     number = int(request.form['numberresults'])
     result_count = int(request.form['num_search_results'])
-    quest_answers = get_all_question_and_answers(text=text, num_results=number)
+
+    quest_answers = get_all_question_and_answers(text, number)
 
     answers = process_predict(quest_answers, result_count)
 
@@ -33,5 +34,5 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0',
+    app.run(debug=True,  # host='0.0.0.0',
             port=environ.get("PORT", 5000), threaded=False)
