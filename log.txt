@@ -1,0 +1,2213 @@
+Microsoft Windows [Version 10.0.17134.950]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+D:\Projects\IBM\v2>python server.py
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/js/nouislider.min.js HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/js/wNumb.js HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /static/github-mark.png HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:26:54] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ * Detected change in 'D:\\Projects\\IBM\\v2\\indexer.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[]
+127.0.0.1 - - [27/Aug/2019 20:34:35] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 20:34:41] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 20:34:43] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[36mGET /static/css/animate.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[36mGET /static/css/nouislider.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[36mGET /static/js/nouislider.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 20:34:49] "[36mGET /static/js/wNumb.js HTTP/1.1[0m" 304 -
+['8055371', '13340329']
+127.0.0.1 - - [27/Aug/2019 20:35:01] "[37mPOST /search HTTP/1.1[0m" 200 -
+
+D:\Projects\IBM\v2>python collect_dataset.py
+Found 500 items in page_no: 1
+Why is processing a sorted array faster than processing an unsorted array?
+LIST SIZE: 101500
+Found 500 items in page_no: 2
+Reset local repository branch to be just like remote repository HEAD
+LIST SIZE: 102000
+Found 500 items in page_no: 3
+Why shouldn&#39;t I use mysql_* functions in PHP?
+LIST SIZE: 102500
+Found 500 items in page_no: 4
+Converting string into datetime
+LIST SIZE: 103000
+Found 500 items in page_no: 5
+Compare two dates with JavaScript
+LIST SIZE: 103500
+Found 500 items in page_no: 6
+How do I debug Node.js applications?
+LIST SIZE: 104000
+Traceback (most recent call last):
+  File "collect_dataset.py", line 12, in <module>
+    get_questions_list(COUNT, page_begin)
+  File "D:\Projects\IBM\v2\stackoverflow2.py", line 47, in get_questions_list
+    pages = get_all_questions(page_begin)
+  File "D:\Projects\IBM\v2\stackoverflow2.py", line 18, in get_all_questions
+    return web.fetch('questions',  pagesize=PAGESIZE, page=page_no, filter="withbody", sort="votes", order="desc")['items']
+  File "C:\Program Files\Python37\lib\site-packages\stackapi\stackapi.py", line 183, in fetch
+    response = requests.get(base_url, params=params, proxies=self.proxy)
+  File "C:\Program Files\Python37\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Program Files\Python37\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Program Files\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Program Files\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Program Files\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\connectionpool.py", line 344, in _make_request
+    self._validate_conn(conn)
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\connectionpool.py", line 843, in _validate_conn
+    conn.connect()
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\connection.py", line 316, in connect
+    conn = self._new_conn()
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Program Files\Python37\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+
+D:\Projects\IBM\v2>python collect_dataset.py
+Found 500 items in page_no: 1
+Why is processing a sorted array faster than processing an unsorted array?
+LIST SIZE: 500
+Found 500 items in page_no: 2
+Reset local repository branch to be just like remote repository HEAD
+LIST SIZE: 1000
+Found 500 items in page_no: 3
+Why shouldn&#39;t I use mysql_* functions in PHP?
+LIST SIZE: 1500
+Found 500 items in page_no: 4
+Converting string into datetime
+LIST SIZE: 2000
+Found 500 items in page_no: 5
+Compare two dates with JavaScript
+LIST SIZE: 2500
+Found 500 items in page_no: 6
+How do I debug Node.js applications?
+LIST SIZE: 3000
+Found 500 items in page_no: 7
+How can I git stash a specific file?
+LIST SIZE: 3500
+Found 500 items in page_no: 8
+Is null check needed before calling instanceof?
+LIST SIZE: 4000
+Found 500 items in page_no: 9
+How can I develop for iPhone using a Windows development machine?
+LIST SIZE: 4500
+Found 500 items in page_no: 10
+How do I add a class to a given element?
+LIST SIZE: 5000
+Found 500 items in page_no: 11
+Android Studio: Add jar as library?
+LIST SIZE: 5500
+Found 500 items in page_no: 12
+What does %~dp0 mean, and how does it work?
+LIST SIZE: 6000
+Found 500 items in page_no: 13
+How do I use vim registers?
+LIST SIZE: 6500
+Found 500 items in page_no: 14
+How to redirect output to a file and stdout
+LIST SIZE: 7000
+Found 500 items in page_no: 15
+How to send an object from one Android Activity to another using Intents?
+LIST SIZE: 7500
+Found 500 items in page_no: 16
+How do you declare an interface in C++?
+LIST SIZE: 8000
+Found 500 items in page_no: 17
+Xcode process launch failed: Security
+LIST SIZE: 8500
+Found 500 items in page_no: 18
+Can&#39;t find the &#39;libpq-fe.h header when trying to install pg gem
+LIST SIZE: 9000
+Found 500 items in page_no: 19
+Angular HTML binding
+LIST SIZE: 9500
+Found 500 items in page_no: 20
+How do I convert struct System.Byte byte[] to a System.IO.Stream object in C#?
+LIST SIZE: 10000
+Found 500 items in page_no: 21
+Posting a File and Associated Data to a RESTful WebService preferably as JSON
+LIST SIZE: 10500
+Found 500 items in page_no: 22
+How to find the sum of an array of numbers
+LIST SIZE: 11000
+Found 500 items in page_no: 23
+When should I use curly braces for ES6 import?
+LIST SIZE: 11500
+Found 500 items in page_no: 24
+About catching ANY exception
+LIST SIZE: 12000
+Found 500 items in page_no: 25
+Uncatchable ChuckNorrisException
+LIST SIZE: 12500
+Found 500 items in page_no: 26
+IntelliJ show JavaDocs tooltip on mouse over
+LIST SIZE: 13000
+Found 500 items in page_no: 27
+Cocoa: What&#39;s the difference between the frame and the bounds?
+LIST SIZE: 13500
+Found 500 items in page_no: 28
+How can I tell if I&#39;m running in 64-bit JVM or 32-bit JVM (from within a program)?
+LIST SIZE: 14000
+Found 500 items in page_no: 29
+Get Last Day of the Month in Python
+LIST SIZE: 14500
+Found 500 items in page_no: 30
+What&#39;s the difference between passing by reference vs. passing by value?
+LIST SIZE: 15000
+Found 500 items in page_no: 31
+Unit test naming best practices
+LIST SIZE: 15500
+Found 500 items in page_no: 32
+What does &#39;super&#39; do in Python?
+LIST SIZE: 16000
+Found 500 items in page_no: 33
+What is the best way to implement &quot;remember me&quot; for a website?
+LIST SIZE: 16500
+Found 500 items in page_no: 34
+How do I get the directory from a file&#39;s full path?
+LIST SIZE: 17000
+Found 500 items in page_no: 35
+Why can&#39;t I define a static method in a Java interface?
+LIST SIZE: 17500
+Found 500 items in page_no: 36
+ES6 class variable alternatives
+LIST SIZE: 18000
+Found 500 items in page_no: 37
+Storing C++ template function definitions in a .CPP file
+LIST SIZE: 18500
+Found 500 items in page_no: 38
+When is assembly faster than C?
+LIST SIZE: 19000
+Found 500 items in page_no: 39
+CSS: Setting width/height as Percentage minus pixels
+LIST SIZE: 19500
+Found 500 items in page_no: 40
+When to use the different log levels
+LIST SIZE: 20000
+Found 500 items in page_no: 41
+Round a double to 2 decimal places
+LIST SIZE: 20500
+Found 500 items in page_no: 42
+How to generate UML diagrams (especially sequence diagrams) from Java code?
+LIST SIZE: 21000
+Found 500 items in page_no: 43
+What is the difference between ng-if and ng-show/ng-hide
+LIST SIZE: 21500
+Found 500 items in page_no: 44
+Printing Python version in output
+LIST SIZE: 22000
+Found 500 items in page_no: 45
+Deleting DataFrame row in Pandas based on column value
+LIST SIZE: 22500
+Found 500 items in page_no: 46
+Difference between Math.Floor() and Math.Truncate()
+LIST SIZE: 23000
+Found 500 items in page_no: 47
+How to retrieve the current version of a MySQL database?
+LIST SIZE: 23500
+Found 500 items in page_no: 48
+Convert Iterable to Stream using Java 8 JDK
+LIST SIZE: 24000
+Found 500 items in page_no: 49
+What are the differences between normal and slim package of jquery?
+LIST SIZE: 24500
+Found 500 items in page_no: 50
+How to join multiple lines of file names into one with custom delimiter?
+LIST SIZE: 25000
+Found 500 items in page_no: 51
+Android Spinner: Get the selected item change event
+LIST SIZE: 25500
+Found 500 items in page_no: 52
+How to define Gradle&#39;s home in IDEA?
+LIST SIZE: 26000
+Found 500 items in page_no: 53
+Multiple lines of input in &lt;input type=&quot;text&quot; /&gt;
+LIST SIZE: 26500
+Found 500 items in page_no: 54
+How do I get the SharedPreferences from a PreferenceActivity in Android?
+LIST SIZE: 27000
+Found 500 items in page_no: 55
+How to color the Git console?
+LIST SIZE: 27500
+Found 500 items in page_no: 56
+How to study design patterns?
+LIST SIZE: 28000
+Found 500 items in page_no: 57
+Using LIMIT within GROUP BY to get N results per group?
+LIST SIZE: 28500
+Found 500 items in page_no: 58
+How can I index a MATLAB array returned by a function without first assigning it to a local variable?
+LIST SIZE: 29000
+Found 500 items in page_no: 59
+How do I git rm a file without deleting it from disk?
+LIST SIZE: 29500
+Found 500 items in page_no: 60
+Python: How to ignore an exception and proceed?
+LIST SIZE: 30000
+Found 500 items in page_no: 61
+Calculate distance between 2 GPS coordinates
+LIST SIZE: 30500
+Found 500 items in page_no: 62
+Maven in Eclipse: step by step installation
+LIST SIZE: 31000
+Found 500 items in page_no: 63
+Public Fields versus Automatic Properties
+LIST SIZE: 31500
+Found 500 items in page_no: 64
+What is the purpose of &quot;&amp;&amp;&quot; in a shell command?
+LIST SIZE: 32000
+Found 500 items in page_no: 65
+jquery change class name
+LIST SIZE: 32500
+Found 500 items in page_no: 66
+Windows equivalent to UNIX pwd
+LIST SIZE: 33000
+Found 500 items in page_no: 67
+Download File to server from URL
+LIST SIZE: 33500
+Found 500 items in page_no: 68
+&quot;To Do&quot; list before publishing Android app to market
+LIST SIZE: 34000
+Found 500 items in page_no: 69
+How to find all occurrences of a substring?
+LIST SIZE: 34500
+Found 500 items in page_no: 70
+Call async/await functions in parallel
+LIST SIZE: 35000
+Found 500 items in page_no: 71
+Set HTTP header to UTF-8 using PHP
+LIST SIZE: 35500
+Found 500 items in page_no: 72
+How can I swap positions of two open files (in splits) in vim?
+LIST SIZE: 36000
+Found 500 items in page_no: 73
+What are the uses of &quot;using&quot; in C#
+LIST SIZE: 36500
+Found 500 items in page_no: 74
+htaccess redirect to https://www
+LIST SIZE: 37000
+Found 500 items in page_no: 75
+How do I add options to a DropDownList using jQuery?
+LIST SIZE: 37500
+Found 500 items in page_no: 76
+What is the purpose of Android&#39;s &lt;merge&gt; tag in XML layouts?
+LIST SIZE: 38000
+Found 500 items in page_no: 77
+How to update gradle in android studio?
+LIST SIZE: 38500
+Found 500 items in page_no: 78
+Allowed characters in cookies
+LIST SIZE: 39000
+Found 500 items in page_no: 79
+Ways to implement data versioning in MongoDB
+LIST SIZE: 39500
+Found 500 items in page_no: 80
+Find and extract a number from a string
+LIST SIZE: 40000
+Found 500 items in page_no: 81
+What exactly does the &quot;u&quot; do? &quot;git push -u origin master&quot; vs &quot;git push origin master&quot;
+LIST SIZE: 40500
+Found 500 items in page_no: 82
+When using Spring Security, what is the proper way to obtain current username (i.e. SecurityContext) information in a bean?
+LIST SIZE: 41000
+Found 500 items in page_no: 83
+Test if executable exists in Python?
+LIST SIZE: 41500
+Found 500 items in page_no: 84
+Tick symbol in HTML/XHTML
+LIST SIZE: 42000
+Found 500 items in page_no: 85
+How to call PHP function from string stored in a Variable
+LIST SIZE: 42500
+Found 500 items in page_no: 86
+Is there a .NET/C# wrapper for SQLite?
+LIST SIZE: 43000
+Found 500 items in page_no: 87
+Most efficient way to concatenate strings?
+LIST SIZE: 43500
+Found 500 items in page_no: 88
+XML Schema (XSD) validation tool?
+LIST SIZE: 44000
+Found 500 items in page_no: 89
+Removing an item from a select box
+LIST SIZE: 44500
+Found 500 items in page_no: 90
+Do I really have a car in my garage?
+LIST SIZE: 45000
+Found 500 items in page_no: 91
+Client on node: Uncaught ReferenceError: require is not defined
+LIST SIZE: 45500
+Found 500 items in page_no: 92
+Best data type to store money values in MySQL
+LIST SIZE: 46000
+Found 500 items in page_no: 93
+How do I check if file exists in jQuery or pure JavaScript?
+LIST SIZE: 46500
+Found 500 items in page_no: 94
+Objective-C: Extract filename from path string
+LIST SIZE: 47000
+Found 500 items in page_no: 95
+How can my iphone app detect its own version number?
+LIST SIZE: 47500
+Found 500 items in page_no: 96
+Is there a way to cause git-reflog to show a date alongside each entry?
+LIST SIZE: 48000
+Found 500 items in page_no: 97
+How to set default font family for entire Android app
+LIST SIZE: 48500
+Found 500 items in page_no: 98
+Release generating .pdb files, why?
+LIST SIZE: 49000
+Found 500 items in page_no: 99
+How to implement common bash idioms in Python?
+LIST SIZE: 49500
+Found 500 items in page_no: 100
+NSRange to Range&lt;String.Index&gt;
+LIST SIZE: 50000
+Found 500 items in page_no: 101
+Proper MIME type for fonts
+LIST SIZE: 50500
+Found 500 items in page_no: 102
+What does the &quot;map&quot; method do in Ruby?
+LIST SIZE: 51000
+Found 500 items in page_no: 103
+Concatenate a vector of strings/character
+LIST SIZE: 51500
+Found 500 items in page_no: 104
+ResourceDictionary in a separate assembly
+LIST SIZE: 52000
+Found 500 items in page_no: 105
+JavaScript: Object Rename Key
+LIST SIZE: 52500
+Found 500 items in page_no: 106
+Why is it common to put CSRF prevention tokens in cookies?
+LIST SIZE: 53000
+Found 500 items in page_no: 107
+How to check whether a file is empty or not?
+LIST SIZE: 53500
+Found 500 items in page_no: 108
+How to make a node.js application run permanently?
+LIST SIZE: 54000
+Found 500 items in page_no: 109
+Getting list of parameter names inside python function
+LIST SIZE: 54500
+Found 500 items in page_no: 110
+How to configure XAMPP to send mail from localhost?
+LIST SIZE: 55000
+Found 500 items in page_no: 111
+Get name of currently executing test in JUnit 4
+LIST SIZE: 55500
+Found 500 items in page_no: 112
+Android Get Current timestamp?
+LIST SIZE: 56000
+Found 500 items in page_no: 113
+Will code in a Finally statement fire if I return a value in a Try block?
+LIST SIZE: 56500
+Found 500 items in page_no: 114
+Ignoring an already checked-in directory&#39;s contents?
+LIST SIZE: 57000
+Found 500 items in page_no: 115
+Difference between &#39;self&#39; and &#39;total&#39; in Chrome CPU Profile of JS
+LIST SIZE: 57500
+Found 500 items in page_no: 116
+Remove last character from string. Swift language
+LIST SIZE: 58000
+Found 500 items in page_no: 117
+Could not load file or assembly or one of its dependencies
+LIST SIZE: 58500
+Found 500 items in page_no: 118
+Run Cron job every N minutes plus offset
+LIST SIZE: 59000
+Found 500 items in page_no: 119
+Element-wise addition of 2 lists?
+LIST SIZE: 59500
+Found 500 items in page_no: 120
+What is aspect-oriented programming?
+LIST SIZE: 60000
+Found 500 items in page_no: 121
+How to get script of SQL Server data?
+LIST SIZE: 60500
+Found 500 items in page_no: 122
+How can I render inline JavaScript with Jade / Pug?
+LIST SIZE: 61000
+Found 500 items in page_no: 123
+What is Java String interning?
+LIST SIZE: 61500
+Found 500 items in page_no: 124
+What is the reason why “synchronized” is not allowed in Java 8 interface methods?
+LIST SIZE: 62000
+Found 500 items in page_no: 125
+How to add conditional attribute in Angular 2?
+LIST SIZE: 62500
+Found 500 items in page_no: 126
+Clone a js object except for one key
+LIST SIZE: 63000
+Found 500 items in page_no: 127
+Map a network drive to be used by a service
+LIST SIZE: 63500
+Found 500 items in page_no: 128
+When should I use semicolons in SQL Server?
+LIST SIZE: 64000
+Found 500 items in page_no: 129
+Best way to stress test a website
+LIST SIZE: 64500
+Found 500 items in page_no: 130
+jQuery.parseJSON throws “Invalid JSON” error due to escaped single quote in JSON
+LIST SIZE: 65000
+Found 500 items in page_no: 131
+What is the meaning of CTOR?
+LIST SIZE: 65500
+Found 500 items in page_no: 132
+Getting rid of \n when using .readlines()
+LIST SIZE: 66000
+Found 500 items in page_no: 133
+How to unzip a file in Powershell?
+LIST SIZE: 66500
+Found 500 items in page_no: 134
+What is offsetHeight, clientHeight, scrollHeight?
+LIST SIZE: 67000
+Found 500 items in page_no: 135
+Optional query string parameters in ASP.NET Web API
+LIST SIZE: 67500
+Found 500 items in page_no: 136
+Show DataFrame as table in iPython Notebook
+LIST SIZE: 68000
+Found 500 items in page_no: 137
+Are NSLayoutConstraints animatable?
+LIST SIZE: 68500
+Found 500 items in page_no: 138
+android.widget.Switch - on/off event listener?
+LIST SIZE: 69000
+Found 500 items in page_no: 139
+Python Pandas: Get index of rows which column matches certain value
+LIST SIZE: 69500
+Found 500 items in page_no: 140
+Is !important bad for performance?
+LIST SIZE: 70000
+Found 500 items in page_no: 141
+.append(), prepend(), .after() and .before()
+LIST SIZE: 70500
+Found 500 items in page_no: 142
+What does &quot;./&quot; (dot slash) refer to in terms of an HTML file path location?
+LIST SIZE: 71000
+Found 500 items in page_no: 143
+What is the difference between `new Object()` and object literal notation?
+LIST SIZE: 71500
+Found 500 items in page_no: 144
+Your project contains error(s), please fix it before running it
+LIST SIZE: 72000
+Found 500 items in page_no: 145
+Why can I not push_back a unique_ptr into a vector?
+LIST SIZE: 72500
+Found 500 items in page_no: 146
+How to find issues that at some point has been assigned to you?
+LIST SIZE: 73000
+Found 500 items in page_no: 147
+C# DLL config file
+LIST SIZE: 73500
+Found 500 items in page_no: 148
+What does `ValueError: cannot reindex from a duplicate axis` mean?
+LIST SIZE: 74000
+Found 500 items in page_no: 149
+socket.error: [Errno 48] Address already in use
+LIST SIZE: 74500
+Found 500 items in page_no: 150
+How to make ReSharper re-evaluate its assembly reference highlighting
+LIST SIZE: 75000
+Found 500 items in page_no: 151
+What does `:_*` (colon underscore star) do in Scala?
+LIST SIZE: 75500
+Found 500 items in page_no: 152
+Password masking console application
+LIST SIZE: 76000
+Found 500 items in page_no: 153
+linux: kill background task
+LIST SIZE: 76500
+Found 500 items in page_no: 154
+Linq list of lists to single list
+LIST SIZE: 77000
+Found 500 items in page_no: 155
+Are there any coding standards for JavaScript?
+LIST SIZE: 77500
+Found 500 items in page_no: 156
+AWK multiple delimiter
+LIST SIZE: 78000
+Found 500 items in page_no: 157
+Why there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT clause?
+LIST SIZE: 78500
+Found 500 items in page_no: 158
+Java: how do I get a class literal from a generic type?
+LIST SIZE: 79000
+Found 500 items in page_no: 159
+Creating an empty file in C#
+LIST SIZE: 79500
+Found 500 items in page_no: 160
+Swift: Test class type in switch statement
+LIST SIZE: 80000
+Found 500 items in page_no: 161
+Check if a string is a date value
+LIST SIZE: 80500
+Found 500 items in page_no: 162
+What is Dispatcher Servlet in Spring?
+LIST SIZE: 81000
+Found 500 items in page_no: 163
+Why can&#39;t I have abstract static methods in C#?
+LIST SIZE: 81500
+Found 500 items in page_no: 164
+Reduce, fold or scan (Left/Right)?
+LIST SIZE: 82000
+Found 500 items in page_no: 165
+How to trim white spaces of array values in php
+LIST SIZE: 82500
+Found 500 items in page_no: 166
+How to execute IN() SQL queries with Spring&#39;s JDBCTemplate effectivly?
+LIST SIZE: 83000
+Found 500 items in page_no: 167
+Why was the statement (j++); forbidden?
+LIST SIZE: 83500
+Found 500 items in page_no: 168
+What is the point of noreturn?
+LIST SIZE: 84000
+Found 500 items in page_no: 169
+nullable object must have a value
+LIST SIZE: 84500
+Found 500 items in page_no: 170
+Return content with IHttpActionResult for non-OK response
+LIST SIZE: 85000
+Found 500 items in page_no: 171
+Check for array not empty: any?
+LIST SIZE: 85500
+Found 500 items in page_no: 172
+How do I get the localhost name in PowerShell?
+LIST SIZE: 86000
+Found 500 items in page_no: 173
+How do I promisify native XHR?
+LIST SIZE: 86500
+Found 500 items in page_no: 174
+How to wait for 2 seconds?
+LIST SIZE: 87000
+Found 500 items in page_no: 175
+How do pointer to pointers work in C?
+LIST SIZE: 87500
+Found 500 items in page_no: 176
+How to improve performance of ngRepeat over a huge dataset (angular.js)?
+LIST SIZE: 88000
+Found 500 items in page_no: 177
+MongoDB and &quot;joins&quot;
+LIST SIZE: 88500
+Found 500 items in page_no: 178
+Can anyone explain python&#39;s relative imports?
+LIST SIZE: 89000
+Found 500 items in page_no: 179
+Change all files and folders permissions of a directory to 644/755
+LIST SIZE: 89500
+Found 500 items in page_no: 180
+What is the Scala identifier &quot;implicitly&quot;?
+LIST SIZE: 90000
+Found 500 items in page_no: 181
+How to set up File Permissions for Laravel 5 (and others)
+LIST SIZE: 90500
+Found 500 items in page_no: 182
+Sort an array in Java
+LIST SIZE: 91000
+Found 500 items in page_no: 183
+DisplayName attribute from Resources?
+LIST SIZE: 91500
+Found 500 items in page_no: 184
+What is std::decay and when it should be used?
+LIST SIZE: 92000
+Found 500 items in page_no: 185
+git revert back to certain commit
+LIST SIZE: 92500
+Found 500 items in page_no: 186
+Good Linux (Ubuntu) SVN client
+LIST SIZE: 93000
+Found 500 items in page_no: 187
+Choose newline character in Notepad++
+LIST SIZE: 93500
+Found 500 items in page_no: 188
+How can I use different certificates on specific connections?
+LIST SIZE: 94000
+Found 500 items in page_no: 189
+Compiling Java 7 code via Maven
+LIST SIZE: 94500
+Found 500 items in page_no: 190
+Why is 128==128 false but 127==127 is true when comparing Integer wrappers in Java?
+LIST SIZE: 95000
+Found 500 items in page_no: 191
+Use Fieldset Legend with bootstrap
+LIST SIZE: 95500
+Found 500 items in page_no: 192
+Maximum length for MD5 input/output
+LIST SIZE: 96000
+Found 500 items in page_no: 193
+How do I view all commits for a specific day?
+LIST SIZE: 96500
+Found 500 items in page_no: 194
+How to avoid the need to specify the WSDL location in a CXF or JAX-WS generated webservice client?
+LIST SIZE: 97000
+Found 500 items in page_no: 195
+pip install: Please check the permissions and owner of that directory
+LIST SIZE: 97500
+Found 500 items in page_no: 196
+In HTML5, should the main navigation be inside or outside the &lt;header&gt; element?
+LIST SIZE: 98000
+Found 500 items in page_no: 197
+VS 2017 Git Local Commit DB.lock error on every commit
+LIST SIZE: 98500
+Found 500 items in page_no: 198
+Android device chooser - My device seems offline
+LIST SIZE: 99000
+Found 500 items in page_no: 199
+What is the &quot;Temporary ASP.NET Files&quot; folder for?
+LIST SIZE: 99500
+Found 500 items in page_no: 200
+Case insensitive string as HashMap key
+LIST SIZE: 100000
+Found 500 items in page_no: 201
+Get most recent file in a directory on Linux
+LIST SIZE: 100500
+Found 500 items in page_no: 202
+Rollback a Git merge
+LIST SIZE: 101000
+Found 500 items in page_no: 203
+Is there a shortcut in Eclipse to Re-run the most recently launched program?
+LIST SIZE: 101500
+Found 500 items in page_no: 204
+Redis is single-threaded, then how does it do concurrent I/O?
+LIST SIZE: 102000
+Found 500 items in page_no: 205
+Why doesn&#39;t the example compile, aka how does (co-, contra-, and in-) variance work?
+LIST SIZE: 102500
+Found 500 items in page_no: 206
+Extending an Object in Javascript
+LIST SIZE: 103000
+Found 500 items in page_no: 207
+Using comparison operators in Scala&#39;s pattern matching system
+LIST SIZE: 103500
+Found 500 items in page_no: 208
+Display a string that contains HTML in twig template
+LIST SIZE: 104000
+Found 500 items in page_no: 209
+What is the minimum I have to do to create an RPM file?
+LIST SIZE: 104500
+Found 500 items in page_no: 210
+Python jinja2 shorthand conditional
+LIST SIZE: 105000
+Found 500 items in page_no: 211
+Setting Vim whitespace preferences by filetype
+LIST SIZE: 105500
+Found 500 items in page_no: 212
+How to configure slf4j-simple
+LIST SIZE: 106000
+Found 500 items in page_no: 213
+How do I specify &quot;close existing connections&quot; in sql script
+LIST SIZE: 106500
+Found 500 items in page_no: 214
+Pickle incompatibility of numpy arrays between Python 2 and 3
+LIST SIZE: 107000
+Found 500 items in page_no: 215
+Eclipse IDE: How to zoom in on text?
+LIST SIZE: 107500
+Found 500 items in page_no: 216
+PDO get the last ID inserted
+LIST SIZE: 108000
+Found 500 items in page_no: 217
+Convert a string to int using sql query
+LIST SIZE: 108500
+Found 500 items in page_no: 218
+Full Screen DialogFragment in Android
+LIST SIZE: 109000
+Found 500 items in page_no: 219
+Text in a flex container doesn&#39;t wrap in IE11
+LIST SIZE: 109500
+Found 500 items in page_no: 220
+How to rotate the background image in the container?
+LIST SIZE: 110000
+Found 500 items in page_no: 221
+Is it ok to run docker from inside docker?
+LIST SIZE: 110500
+Found 500 items in page_no: 222
+Java : Comparable vs Comparator
+LIST SIZE: 111000
+Found 500 items in page_no: 223
+Inline CSS styles in React: how to implement a:hover?
+LIST SIZE: 111500
+Found 500 items in page_no: 224
+Django Admin - Disable the &#39;Add&#39; action for a specific model
+LIST SIZE: 112000
+Found 500 items in page_no: 225
+How to format date in angularjs
+LIST SIZE: 112500
+Found 500 items in page_no: 226
+Where do gems install?
+LIST SIZE: 113000
+Found 500 items in page_no: 227
+How to install plugins to Sublime Text 2 editor?
+LIST SIZE: 113500
+Found 500 items in page_no: 228
+Open a folder using Process.Start
+LIST SIZE: 114000
+Found 500 items in page_no: 229
+mysql Foreign key constraint is incorrectly formed error
+LIST SIZE: 114500
+Found 500 items in page_no: 230
+vscode imports import console = require(&quot;console&quot;); automatically
+LIST SIZE: 115000
+Found 500 items in page_no: 231
+Are braces necessary in one-line statements in JavaScript?
+LIST SIZE: 115500
+Found 500 items in page_no: 232
+What is the purpose of Flask&#39;s context stacks?
+LIST SIZE: 116000
+Found 500 items in page_no: 233
+display: inline-block extra margin
+LIST SIZE: 116500
+Found 500 items in page_no: 234
+AngularJS - How can I reference the property name within an ng-Repeat
+LIST SIZE: 117000
+Found 500 items in page_no: 235
+Can you attach Amazon EBS to multiple instances?
+LIST SIZE: 117500
+Found 500 items in page_no: 236
+How to elegantly deal with timezones
+LIST SIZE: 118000
+Found 500 items in page_no: 237
+Show CollapsingToolbarLayout Title ONLY when collapsed
+LIST SIZE: 118500
+Found 500 items in page_no: 238
+How to create CSV Excel file C#?
+LIST SIZE: 119000
+Found 500 items in page_no: 239
+Can I query MongoDB ObjectId by date?
+LIST SIZE: 119500
+Found 500 items in page_no: 240
+MongoDB vs Firebase
+LIST SIZE: 120000
+Found 500 items in page_no: 241
+How to check if anonymous object has a method?
+LIST SIZE: 120500
+Found 500 items in page_no: 242
+How can I efficiently select a Standard Library container in C++11?
+LIST SIZE: 121000
+Found 500 items in page_no: 243
+Indexing freeze with message: Indexing paused due to batch updated
+LIST SIZE: 121500
+Found 500 items in page_no: 244
+Installing rmagick on Ubuntu
+LIST SIZE: 122000
+Found 500 items in page_no: 245
+Base64 length calculation?
+LIST SIZE: 122500
+Found 500 items in page_no: 246
+Join an Array in Objective-C
+LIST SIZE: 123000
+Found 500 items in page_no: 247
+Adding a Google Plus (one or share) link to an email newsletter
+LIST SIZE: 123500
+Found 500 items in page_no: 248
+Android simple alert dialog
+LIST SIZE: 124000
+Found 500 items in page_no: 249
+String isNullOrEmpty in Java?
+LIST SIZE: 124500
+Found 500 items in page_no: 250
+Re-sign IPA (iPhone)
+LIST SIZE: 125000
+Found 500 items in page_no: 251
+Getting Gradle dependencies in IntelliJ IDEA using Gradle build
+LIST SIZE: 125500
+Found 500 items in page_no: 252
+Handler vs AsyncTask
+LIST SIZE: 126000
+Found 500 items in page_no: 253
+How should I pass multiple parameters to an ASP.Net Web API GET?
+LIST SIZE: 126500
+Found 500 items in page_no: 254
+NoMethodError: undefined method `last_comment&#39; after upgrading to rake 11
+LIST SIZE: 127000
+Found 500 items in page_no: 255
+How to determine if a number is a prime with regex?
+LIST SIZE: 127500
+Found 500 items in page_no: 256
+AngularJS - how to get an ngRepeat filtered result reference
+LIST SIZE: 128000
+Found 500 items in page_no: 257
+How can I uninstall an application using PowerShell?
+LIST SIZE: 128500
+Found 500 items in page_no: 258
+Load and execute external js file in node.js with access to local variables?
+LIST SIZE: 129000
+Found 500 items in page_no: 259
+Why does pycharm propose to change method to static
+LIST SIZE: 129500
+Found 500 items in page_no: 260
+In c++ what does a tilde &quot;~&quot; before a function name signify?
+LIST SIZE: 130000
+Found 500 items in page_no: 261
+SQL Server String or binary data would be truncated
+LIST SIZE: 130500
+Found 500 items in page_no: 262
+Mock functions in Go
+LIST SIZE: 131000
+Found 500 items in page_no: 263
+What does it mean to start a PHP function with an ampersand?
+LIST SIZE: 131500
+Found 500 items in page_no: 264
+what exactly the python&#39;s file.flush() is doing?
+LIST SIZE: 132000
+Found 500 items in page_no: 265
+How to encode a URL in Swift
+LIST SIZE: 0
+Found 500 items in page_no: 266
+Java: Literal percent sign in printf statement
+Traceback (most recent call last):
+  File "collect_dataset.py", line 12, in <module>
+    get_questions_list(COUNT, page_begin)
+  File "D:\Projects\IBM\v2\stackoverflow2.py", line 56, in get_questions_list
+    file = open('data.json', 'r')
+OSError: [Errno 22] Invalid argument: 'data.json'
+
+D:\Projects\IBM\v2>python collect_dataset.py
+Found 500 items in page_no: 267
+How to check a checkbox in capybara?
+LIST SIZE: 133000
+Found 500 items in page_no: 268
+Difference between *ptr += 1 and *ptr++ in C
+LIST SIZE: 133500
+Found 500 items in page_no: 269
+Changing default encoding of Python?
+LIST SIZE: 134000
+Found 500 items in page_no: 270
+How to Create Grid/Tile View?
+LIST SIZE: 134500
+Found 500 items in page_no: 271
+How to implement oauth2 server in ASP.NET MVC 5 and WEB API 2
+LIST SIZE: 135000
+Found 500 items in page_no: 272
+Why escape_javascript before rendering a partial?
+LIST SIZE: 135500
+Found 500 items in page_no: 273
+How to do a webkit css endless rotation-animation.
+LIST SIZE: 136000
+Found 500 items in page_no: 274
+How to display pdf file in HTML
+LIST SIZE: 136500
+Found 500 items in page_no: 275
+How do I subtract minutes from a date in javascript?
+LIST SIZE: 137000
+Found 500 items in page_no: 276
+How do you find the sum of all the numbers in an array in Java?
+LIST SIZE: 137500
+Found 500 items in page_no: 277
+How to add column if not exists on PostgreSQL?
+LIST SIZE: 138000
+Found 500 items in page_no: 278
+How to implement Builder pattern in Kotlin?
+LIST SIZE: 138500
+Found 500 items in page_no: 279
+Java LinkedHashMap get first or last entry
+LIST SIZE: 139000
+Found 500 items in page_no: 280
+How to get maximum value from the Collection (for example ArrayList)?
+LIST SIZE: 139500
+Found 500 items in page_no: 281
+Visual Studio Code - is there a Compare feature like that plugin for Notepad ++?
+LIST SIZE: 140000
+Found 500 items in page_no: 282
+PHP case-insensitive in_array function
+LIST SIZE: 140500
+Found 500 items in page_no: 283
+Why does &quot;return list.sort()&quot; return None, not the list?
+LIST SIZE: 141000
+Found 500 items in page_no: 284
+Bootstrap 3 panel header with buttons wrong position
+LIST SIZE: 141500
+Found 500 items in page_no: 285
+How can I convert a string to upper- or lower-case with XSLT?
+LIST SIZE: 142000
+Found 500 items in page_no: 286
+What is the exact meaning of IFS=$&#39;\n&#39;?
+LIST SIZE: 142500
+Found 500 items in page_no: 287
+Minimum and maximum date
+LIST SIZE: 143000
+Found 500 items in page_no: 288
+Pandas DataFrame to List of Dictionaries
+LIST SIZE: 143500
+Found 500 items in page_no: 289
+How do I kill all the processes in Mysql &quot;show processlist&quot;?
+LIST SIZE: 144000
+Found 500 items in page_no: 290
+How to get highcharts dates in the x axis?
+LIST SIZE: 144500
+Found 500 items in page_no: 291
+Rails 4: assets not loading in production
+LIST SIZE: 145000
+Found 500 items in page_no: 292
+Are Databases and Functional Programming at odds?
+LIST SIZE: 145500
+Found 500 items in page_no: 293
+Best practices for using Markers in SLF4J/Logback
+LIST SIZE: 146000
+Found 500 items in page_no: 294
+NGINX to reverse proxy websockets AND enable SSL (wss://)?
+LIST SIZE: 146500
+Found 500 items in page_no: 295
+Value was either too large or too small for a UInt32: TFS Checkin Error
+LIST SIZE: 147000
+Found 500 items in page_no: 296
+What is SOA &quot;in plain english&quot;?
+LIST SIZE: 147500
+Found 500 items in page_no: 297
+Adjust UIButton font size to width
+LIST SIZE: 148000
+Found 500 items in page_no: 298
+css - position div to bottom of containing div
+LIST SIZE: 148500
+Found 500 items in page_no: 299
+Why does fatal error &quot;LNK1104: cannot open file &#39;C:\Program.obj&#39;&quot; occur when I compile a C++ project in Visual Studio?
+LIST SIZE: 149000
+Found 500 items in page_no: 300
+Finding out current index in EACH loop (Ruby)
+LIST SIZE: 149500
+Found 500 items in page_no: 301
+Unbalanced calls to begin/end appearance transitions for &lt;UITabBarController: 0x197870&gt;
+LIST SIZE: 150000
+Found 500 items in page_no: 302
+How to create a self-signed certificate for a domain name for development?
+LIST SIZE: 150500
+Found 500 items in page_no: 303
+Does a finally block always run?
+LIST SIZE: 151000
+Found 500 items in page_no: 304
+Convert Unix timestamp to a date string
+LIST SIZE: 151500
+Found 500 items in page_no: 305
+How to disable XDebug
+LIST SIZE: 152000
+Found 500 items in page_no: 306
+Difference between make and build in Android Studio
+LIST SIZE: 152500
+Found 500 items in page_no: 307
+How can I move a single directory from a git repository to a new repository whilst maintaining the history?
+LIST SIZE: 153000
+Found 500 items in page_no: 308
+JQuery: How to call RESIZE event only once it&#39;s FINISHED resizing?
+LIST SIZE: 153500
+Found 500 items in page_no: 309
+How to reduce iOS AVPlayer start delay
+LIST SIZE: 154000
+Found 500 items in page_no: 310
+ES6 Class Multiple inheritance
+LIST SIZE: 154500
+Found 500 items in page_no: 311
+Transform DateTime into simple Date in Ruby on Rails
+LIST SIZE: 155000
+Found 500 items in page_no: 312
+Automatic post-registration user authentication
+LIST SIZE: 155500
+Found 500 items in page_no: 313
+Open URL in new window with Javascript
+LIST SIZE: 156000
+Found 500 items in page_no: 314
+How to select a schema in postgres when using psql?
+LIST SIZE: 156500
+Found 500 items in page_no: 315
+How to get a specific version of a file in Mercurial?
+LIST SIZE: 157000
+Found 500 items in page_no: 316
+Rails: call another controller action from a controller
+LIST SIZE: 157500
+Found 500 items in page_no: 317
+Getting a timestamp for today at midnight?
+LIST SIZE: 158000
+Found 500 items in page_no: 318
+React: &quot;this&quot; is undefined inside a component function
+LIST SIZE: 158500
+Found 500 items in page_no: 319
+Working with huge files in VIM
+LIST SIZE: 159000
+Found 500 items in page_no: 320
+How do I trigger the success callback on a model.save()?
+LIST SIZE: 159500
+Found 500 items in page_no: 321
+Delete branches in Bitbucket
+LIST SIZE: 160000
+Found 500 items in page_no: 322
+How to get client IP address in Laravel 5+?
+LIST SIZE: 160500
+Found 500 items in page_no: 323
+How to convert PascalCase to pascal_case?
+LIST SIZE: 161000
+Found 500 items in page_no: 324
+phpunit mock method multiple calls with different arguments
+LIST SIZE: 161500
+Found 500 items in page_no: 325
+What does $.when.apply($, someArray) do?
+LIST SIZE: 162000
+Found 500 items in page_no: 326
+Getting &quot;Cannot call a class as a function&quot; in my React Project
+LIST SIZE: 162500
+Found 500 items in page_no: 327
+Get average color of image via Javascript
+LIST SIZE: 163000
+Found 500 items in page_no: 328
+How to include (source) R script in other scripts
+LIST SIZE: 163500
+Found 500 items in page_no: 329
+GitHub clone from pull request?
+LIST SIZE: 164000
+Found 500 items in page_no: 330
+Make flex items take content width, not width of parent container
+LIST SIZE: 164500
+Found 500 items in page_no: 331
+Effect of a Bitwise Operator on a Boolean in Java
+LIST SIZE: 165000
+Found 500 items in page_no: 332
+What is javax.inject.Named annotation supposed to be used for?
+LIST SIZE: 165500
+Found 500 items in page_no: 333
+How do I update my forked repo using SourceTree?
+LIST SIZE: 166000
+Found 500 items in page_no: 334
+Docker ADD vs VOLUME
+LIST SIZE: 166500
+Found 500 items in page_no: 335
+How do I unbind &quot;hover&quot; in jQuery?
+LIST SIZE: 167000
+Found 500 items in page_no: 336
+Create a matrix of scatterplots (pairs() equivalent) in ggplot2
+LIST SIZE: 167500
+Found 500 items in page_no: 337
+Rails - link_to helper with data-* attribute
+LIST SIZE: 168000
+Found 500 items in page_no: 338
+Why is argc not a constant?
+LIST SIZE: 168500
+Found 500 items in page_no: 339
+Switch branch names in git
+LIST SIZE: 169000
+Found 500 items in page_no: 340
+opengl: glFlush() vs. glFinish()
+LIST SIZE: 169500
+Found 500 items in page_no: 341
+Opacity of div&#39;s background without affecting contained element in IE 8?
+LIST SIZE: 170000
+Found 500 items in page_no: 342
+PHP variables in anonymous functions
+LIST SIZE: 170500
+Found 500 items in page_no: 343
+How does a garbage collector avoid an infinite loop here?
+LIST SIZE: 171000
+Found 500 items in page_no: 344
+Are std::vector elements guaranteed to be contiguous?
+LIST SIZE: 171500
+Found 500 items in page_no: 345
+Android. WebView and loadData
+LIST SIZE: 172000
+Found 500 items in page_no: 346
+How to view the Folder and Files in GAC?
+LIST SIZE: 172500
+Found 500 items in page_no: 347
+How to check if element exists using a lambda expression?
+LIST SIZE: 173000
+Found 500 items in page_no: 348
+Can you do this HTML layout without using tables?
+LIST SIZE: 173500
+Found 500 items in page_no: 349
+How does strtok() split the string into tokens in C?
+LIST SIZE: 174000
+Found 500 items in page_no: 350
+Charts for Android
+LIST SIZE: 174500
+Found 500 items in page_no: 351
+How to use font-awesome icons from node-modules
+LIST SIZE: 175000
+Found 500 items in page_no: 352
+How to create a unique index on a NULL column?
+LIST SIZE: 175500
+Found 500 items in page_no: 353
+Using lambda expressions for event handlers
+LIST SIZE: 176000
+Found 500 items in page_no: 354
+What is the difference between Caching and Memoization?
+LIST SIZE: 176500
+Found 500 items in page_no: 355
+How do I scroll the UIScrollView when the keyboard appears?
+LIST SIZE: 177000
+Found 500 items in page_no: 356
+What do three dots &quot;./...&quot; mean in Go command line invocations?
+LIST SIZE: 177500
+Found 500 items in page_no: 357
+Disable cache for some images
+LIST SIZE: 178000
+Found 500 items in page_no: 358
+How do I get a file&#39;s directory using the File object?
+LIST SIZE: 178500
+Found 500 items in page_no: 359
+IIS7 Settings File Locations
+LIST SIZE: 179000
+Found 500 items in page_no: 360
+Why does Git say my master branch is &quot;already up to date&quot; even though it is not?
+LIST SIZE: 179500
+Found 500 items in page_no: 361
+Disabling xdebug when running composer
+LIST SIZE: 180000
+Found 500 items in page_no: 362
+How do I automatically sort a has_many relationship in Rails?
+LIST SIZE: 180500
+Found 500 items in page_no: 363
+Building big, immutable objects without using constructors having long parameter lists
+LIST SIZE: 181000
+Found 500 items in page_no: 364
+iOS: Compare two dates
+LIST SIZE: 181500
+Found 500 items in page_no: 365
+How to calculate moving average without keeping the count and data-total?
+LIST SIZE: 182000
+Found 500 items in page_no: 366
+Are Swift variables atomic?
+LIST SIZE: 182500
+Found 500 items in page_no: 367
+Cleanest way to build an SQL string in Java
+LIST SIZE: 183000
+Found 500 items in page_no: 368
+In C/C++ what&#39;s the simplest way to reverse the order of bits in a byte?
+LIST SIZE: 183500
+Found 500 items in page_no: 369
+onActivityResult() &amp; onResume()
+LIST SIZE: 184000
+Found 500 items in page_no: 370
+How do I get jQuery autocompletion in TypeScript?
+LIST SIZE: 184500
+Found 500 items in page_no: 371
+How to shutdown a Spring Boot Application in a correct way?
+LIST SIZE: 185000
+Found 500 items in page_no: 372
+C# - Attribute to Skip over a Method while Stepping in Debug Mode
+LIST SIZE: 185500
+Found 500 items in page_no: 373
+What does a b prefix before a python string mean?
+LIST SIZE: 186000
+Found 500 items in page_no: 374
+How to overwrite the previous print to stdout in python?
+LIST SIZE: 186500
+Found 500 items in page_no: 375
+No empty constructor when create a service
+LIST SIZE: 187000
+Found 500 items in page_no: 376
+No IUserTokenProvider is registered
+LIST SIZE: 187500
+Found 500 items in page_no: 377
+Eclipse syntax highlighting preferences save and restore
+LIST SIZE: 188000
+Found 500 items in page_no: 378
+Catching java.lang.OutOfMemoryError?
+LIST SIZE: 188500
+Found 500 items in page_no: 379
+How do I select the &quot;last child&quot; with a specific class name in CSS?
+LIST SIZE: 189000
+Found 500 items in page_no: 380
+Making a property deserialize but not serialize with json.net
+LIST SIZE: 189500
+Found 500 items in page_no: 381
+The &#39;Access-Control-Allow-Origin&#39; header contains multiple values
+LIST SIZE: 190000
+Found 500 items in page_no: 382
+How do I add FTP support to Eclipse?
+LIST SIZE: 190500
+Found 500 items in page_no: 383
+How to get innerHTML of DOMNode?
+LIST SIZE: 191000
+Found 500 items in page_no: 384
+LINQ where vs takewhile
+LIST SIZE: 191500
+Found 500 items in page_no: 385
+Get path from open file in Python
+LIST SIZE: 192000
+Found 500 items in page_no: 386
+Change Image of ImageView programmatically in Android
+LIST SIZE: 192500
+Found 500 items in page_no: 387
+How can we save all files in (VSCode) like we do in Visual Studio
+LIST SIZE: 193000
+Found 500 items in page_no: 388
+Calling a base class&#39;s classmethod in Python
+LIST SIZE: 193500
+Found 500 items in page_no: 389
+Get text from span using jquery
+LIST SIZE: 194000
+Found 500 items in page_no: 390
+What&#39;s the point of map in Haskell, when there is fmap?
+LIST SIZE: 194500
+Found 500 items in page_no: 391
+How can I portably call a C++ function that takes a char** on some platforms and a const char** on others?
+LIST SIZE: 195000
+Found 500 items in page_no: 392
+Html.DropdownListFor selected value not being set
+LIST SIZE: 195500
+Found 500 items in page_no: 393
+What is difference between Axios and Fetch?
+LIST SIZE: 196000
+Found 500 items in page_no: 394
+Good geometry library in python?
+LIST SIZE: 196500
+Found 500 items in page_no: 395
+How can I set Visual Studio to use K&amp;R style bracketing?
+LIST SIZE: 197000
+Found 500 items in page_no: 396
+How do I strip non alphanumeric characters from a string and keep spaces?
+LIST SIZE: 197500
+Found 500 items in page_no: 397
+How can I get external SD card path for Android 4.0+?
+LIST SIZE: 198000
+Found 500 items in page_no: 398
+Play sound on button click android
+LIST SIZE: 198500
+Found 500 items in page_no: 399
+React - How to pass HTML tags in props?
+LIST SIZE: 199000
+Found 500 items in page_no: 400
+Putting license in each code file?
+LIST SIZE: 199500
+Found 500 items in page_no: 401
+Best approach for GPGPU/CUDA/OpenCL in Java?
+LIST SIZE: 200000
+Found 500 items in page_no: 402
+javax.xml.bind.UnmarshalException: unexpected element (uri:&quot;&quot;, local:&quot;Group&quot;)
+LIST SIZE: 200500
+Found 500 items in page_no: 403
+Django &quot;xxxxxx Object&quot; display customization in admin action sidebar
+LIST SIZE: 201000
+Found 500 items in page_no: 404
+A good solution for await in try/catch/finally?
+LIST SIZE: 201500
+Found 500 items in page_no: 405
+How to delete session cookie in Postman?
+LIST SIZE: 202000
+Found 500 items in page_no: 406
+Django equivalent for count and group by
+LIST SIZE: 202500
+Found 500 items in page_no: 407
+How to check if a URL is valid
+LIST SIZE: 203000
+Found 500 items in page_no: 408
+Create an index on a huge MySQL production table without table locking
+LIST SIZE: 203500
+Found 500 items in page_no: 409
+How to print a string in fixed width?
+LIST SIZE: 204000
+Found 500 items in page_no: 410
+Well designed query commands and/or specifications
+LIST SIZE: 204500
+Found 500 items in page_no: 411
+How to handle dependency injection in a WPF/MVVM application
+LIST SIZE: 205000
+Found 500 items in page_no: 412
+Professional jQuery based Combobox control?
+LIST SIZE: 205500
+Found 500 items in page_no: 413
+How do I get the last inserted ID of a MySQL table in PHP?
+LIST SIZE: 206000
+Found 500 items in page_no: 414
+Submitting the value of a disabled input field
+LIST SIZE: 206500
+Found 500 items in page_no: 415
+setHintTextColor() in EditText
+LIST SIZE: 207000
+Found 500 items in page_no: 416
+TCP: can two different sockets share a port?
+LIST SIZE: 207500
+Found 500 items in page_no: 417
+What is pseudopolynomial time? How does it differ from polynomial time?
+LIST SIZE: 208000
+Found 500 items in page_no: 418
+(node:3341) DeprecationWarning: Mongoose: mpromise
+LIST SIZE: 208500
+Found 500 items in page_no: 419
+How can I make my local repository available for git-pull?
+LIST SIZE: 209000
+Found 500 items in page_no: 420
+Node.js or Erlang
+LIST SIZE: 209500
+Found 500 items in page_no: 421
+How to make HTML table cell editable?
+LIST SIZE: 210000
+Found 500 items in page_no: 422
+Remote connect to clearDB heroku database
+LIST SIZE: 210500
+Found 500 items in page_no: 423
+How to capture stdout output from a Python function call?
+LIST SIZE: 211000
+Found 500 items in page_no: 424
+cascade={&quot;remove&quot;} VS orphanRemoval=true VS ondelete=&quot;CASCADE
+LIST SIZE: 211500
+Found 500 items in page_no: 425
+Find position of a node using xpath
+LIST SIZE: 212000
+Found 500 items in page_no: 426
+How to open windows explorer on selected resource in Eclipse
+LIST SIZE: 212500
+Found 500 items in page_no: 427
+How to check a boolean condition in EL?
+LIST SIZE: 213000
+Found 500 items in page_no: 428
+CSS I want a div to be on top of everything
+LIST SIZE: 213500
+Found 500 items in page_no: 429
+How to open a second activity on click of button in android app
+LIST SIZE: 214000
+Found 500 items in page_no: 430
+Invalid CSRF Token &#39;null&#39; was found on the request parameter &#39;_csrf&#39; or header &#39;X-CSRF-TOKEN&#39;
+LIST SIZE: 214500
+Found 500 items in page_no: 431
+What is the difference between Observable, Completable and Single in RxJava
+LIST SIZE: 215000
+Found 500 items in page_no: 432
+In C#, why can&#39;t an anonymous method contain a yield statement?
+LIST SIZE: 215500
+Found 500 items in page_no: 433
+How to expire session due to inactivity in Django?
+LIST SIZE: 216000
+Found 500 items in page_no: 434
+Handling multiple branches in continuous integration
+LIST SIZE: 216500
+Found 500 items in page_no: 435
+Difference between global maxconn and server maxconn haproxy
+LIST SIZE: 217000
+Found 500 items in page_no: 436
+Intellij code formatting, Java annotations on new lines
+LIST SIZE: 217500
+Found 500 items in page_no: 437
+XAMPP : Couldn&#39;t start Apache (Windows 10)
+LIST SIZE: 218000
+Found 500 items in page_no: 438
+How do I get the MAX row with a GROUP BY in LINQ query?
+LIST SIZE: 218500
+Found 500 items in page_no: 439
+Renew Provisioning Profile
+LIST SIZE: 219000
+Found 500 items in page_no: 440
+How to check if a service is running via batch file and start it, if it is not running?
+LIST SIZE: 219500
+Found 500 items in page_no: 441
+Android AlarmManager - RTC_WAKEUP vs ELAPSED_REALTIME_WAKEUP
+LIST SIZE: 220000
+Found 500 items in page_no: 442
+Mac OS X wants to use system keychain when compiling the project
+LIST SIZE: 220500
+Found 500 items in page_no: 443
+Git: How to reuse/retain commit messages after &#39;git reset&#39;?
+LIST SIZE: 221000
+Found 500 items in page_no: 444
+Express.js req.ip is returning ::ffff:127.0.0.1
+LIST SIZE: 221500
+Found 500 items in page_no: 445
+Auto-indent spaces with C in vim?
+LIST SIZE: 222000
+Found 500 items in page_no: 446
+Which STL container should I use for a FIFO?
+LIST SIZE: 222500
+Found 500 items in page_no: 447
+What is the recommended approach towards multi-tenant databases in MongoDB?
+LIST SIZE: 223000
+Found 500 items in page_no: 448
+SQLAlchemy: cascade delete
+LIST SIZE: 223500
+Found 500 items in page_no: 449
+Devise password reset from Rails console
+LIST SIZE: 224000
+Found 500 items in page_no: 450
+Check if a value is in an array (C#)
+LIST SIZE: 224500
+Found 500 items in page_no: 451
+How to make user defined function descriptions (&quot;docstrings&quot;) available to julia REPL?
+LIST SIZE: 225000
+Found 500 items in page_no: 452
+Saturating subtract/add for unsigned bytes
+LIST SIZE: 225500
+Found 500 items in page_no: 453
+Getting around MySQL &quot;Can&#39;t reopen table&quot; error
+LIST SIZE: 226000
+Found 500 items in page_no: 454
+How to create circle with B&#233;zier curves?
+LIST SIZE: 226500
+Found 500 items in page_no: 455
+Android: How does Bitmap recycle() work?
+LIST SIZE: 227000
+Found 500 items in page_no: 456
+How to call a static method in JSP/EL?
+LIST SIZE: 227500
+Found 500 items in page_no: 457
+Redefining the Index in a Pandas DataFrame object
+LIST SIZE: 228000
+Found 500 items in page_no: 458
+gdb: how to print the current line or find the current line number?
+LIST SIZE: 228500
+Found 500 items in page_no: 459
+Injecting a service into another service in angularJS
+LIST SIZE: 229000
+Found 500 items in page_no: 460
+How to add background-image using ngStyle (angular2)?
+LIST SIZE: 229500
+Found 500 items in page_no: 461
+Using &quot;margin: 0 auto;&quot; in Internet Explorer 8
+LIST SIZE: 230000
+Found 500 items in page_no: 462
+Is python&#39;s sorted() function guaranteed to be stable?
+LIST SIZE: 230500
+Found 500 items in page_no: 463
+understanding private setters
+LIST SIZE: 231000
+Found 500 items in page_no: 464
+How can I identify the request queue for a linux block device
+LIST SIZE: 231500
+Found 500 items in page_no: 465
+How to get collection of keys in javascript dictionary?
+LIST SIZE: 232000
+Found 500 items in page_no: 466
+What is the exact meaning of Git Bash?
+LIST SIZE: 232500
+Found 500 items in page_no: 467
+How do I update npm on Windows?
+LIST SIZE: 233000
+Found 500 items in page_no: 468
+C addition using modulus
+LIST SIZE: 233500
+Found 500 items in page_no: 469
+C# code won&#39;t compile. No implicit conversion between null and int
+LIST SIZE: 234000
+Found 500 items in page_no: 470
+Make child visible outside an overflow:hidden parent
+LIST SIZE: 234500
+Found 500 items in page_no: 471
+Write formatted JSON in Node.js
+LIST SIZE: 235000
+Found 500 items in page_no: 472
+MacOS: what&#39;s the difference between /dev/tty.* and /dev/cu.*?
+LIST SIZE: 235500
+Found 500 items in page_no: 473
+double? = double? + double?
+LIST SIZE: 236000
+Found 500 items in page_no: 474
+Get current language with angular-translate
+LIST SIZE: 236500
+Found 500 items in page_no: 475
+What&#39;s the tabindex=&quot;-1&quot; in bootstrap for
+LIST SIZE: 237000
+Found 500 items in page_no: 476
+jQuery datepicker years shown
+LIST SIZE: 237500
+Found 500 items in page_no: 477
+Guide to understanding gitk?
+LIST SIZE: 238000
+Found 500 items in page_no: 478
+Can&#39;t create handler inside thread that has not called Looper.prepare() inside AsyncTask for ProgressDialog
+LIST SIZE: 238500
+Found 500 items in page_no: 479
+Getting std :: ifstream to handle LF, CR, and CRLF?
+LIST SIZE: 239000
+Found 500 items in page_no: 480
+dynamic does not contain a definition for a property from a project reference
+LIST SIZE: 239500
+Found 500 items in page_no: 481
+Is there a short cut for going back to the beginning of a file by vi editor?
+LIST SIZE: 240000
+Found 500 items in page_no: 482
+SSL backend error when using OpenSSL
+LIST SIZE: 240500
+Found 500 items in page_no: 483
+Disabling User dragging on BottomSheet
+LIST SIZE: 241000
+Found 500 items in page_no: 484
+Is there a keyboard shortcut in Eclipse to fold the current method/block?
+LIST SIZE: 241500
+Found 500 items in page_no: 485
+Relative Paths in Javascript in an external file
+LIST SIZE: 242000
+Found 500 items in page_no: 486
+Meaning of Leaky Abstraction?
+LIST SIZE: 242500
+Found 500 items in page_no: 487
+How to set a:link height/width with css?
+LIST SIZE: 243000
+Found 500 items in page_no: 488
+How to remove button from HighCharts
+LIST SIZE: 243500
+Found 500 items in page_no: 489
+String compare in Perl with &quot;eq&quot; vs &quot;==&quot;
+LIST SIZE: 244000
+Found 500 items in page_no: 490
+ASP.NET MVC - Bundle Config order
+LIST SIZE: 244500
+Found 500 items in page_no: 491
+.gitignore not ignoring .idea path
+LIST SIZE: 245000
+Found 500 items in page_no: 492
+Disabled input text color
+LIST SIZE: 245500
+Found 500 items in page_no: 493
+How to simulate &quot;Press any key to continue?&quot;
+LIST SIZE: 246000
+Found 500 items in page_no: 494
+Sort multidimensional array by multiple keys
+LIST SIZE: 246500
+Found 500 items in page_no: 495
+Should i use ThreadPools or Task Parallel Library for IO-bound operations
+LIST SIZE: 247000
+Found 500 items in page_no: 496
+Use CSS to remove the space between images
+LIST SIZE: 247500
+Found 500 items in page_no: 497
+How to make part of the text Bold in android at runtime?
+LIST SIZE: 248000
+Found 500 items in page_no: 498
+Send a base64 image in HTML email
+LIST SIZE: 248500
+Found 500 items in page_no: 499
+Understanding std::atomic::compare_exchange_weak() in C++11
+LIST SIZE: 249000
+Found 500 items in page_no: 500
+Is it possible to use the Java 8 Stream API on Android API &lt; 24?
+LIST SIZE: 249500
+Found 500 items in page_no: 501
+How do I use Moq to mock an extension method?
+LIST SIZE: 250000
+Found 500 items in page_no: 502
+&quot;which in ruby&quot;: Checking if program exists in $PATH from ruby
+LIST SIZE: 250500
+Found 500 items in page_no: 503
+How to capture an arbitrary number of groups in JavaScript Regexp?
+LIST SIZE: 251000
+Found 500 items in page_no: 504
+ILookup interface vs IDictionary
+LIST SIZE: 251500
+Found 500 items in page_no: 505
+Escape invalid XML characters in C#
+LIST SIZE: 252000
+Found 500 items in page_no: 506
+Add a column to a table with a default value equal to the value of an existing column
+LIST SIZE: 252500
+Found 500 items in page_no: 507
+Checking whether something is iterable
+LIST SIZE: 253000
+Found 500 items in page_no: 508
+Removing from array during enumeration in Swift?
+LIST SIZE: 253500
+Found 500 items in page_no: 509
+Visual Studio 2017 cannot update Microsoft.NETCore.App package (&quot;Blocked by project&quot;)
+LIST SIZE: 254000
+Found 500 items in page_no: 510
+pthread function from a class
+LIST SIZE: 254500
+Found 500 items in page_no: 511
+Convert Dashes to CamelCase in PHP
+LIST SIZE: 255000
+Found 500 items in page_no: 512
+RegExp.exec() returns NULL sporadically
+LIST SIZE: 255500
+Found 500 items in page_no: 513
+Python Process Pool non-daemonic?
+LIST SIZE: 256000
+Found 500 items in page_no: 514
+MySQL, Concatenate two columns
+LIST SIZE: 256500
+Found 500 items in page_no: 515
+How do I stop $watching in AngularJS?
+LIST SIZE: 257000
+Found 500 items in page_no: 516
+How to use Ionic Framework for Web App Development?
+LIST SIZE: 257500
+Found 500 items in page_no: 517
+Ansible - Use default if a variable is not defined
+LIST SIZE: 258000
+Found 500 items in page_no: 518
+Weak reference benefits
+LIST SIZE: 258500
+Found 500 items in page_no: 519
+JetBrains WebIDE: PHP variable type hinting?
+LIST SIZE: 259000
+Found 500 items in page_no: 520
+Valid characters of a hostname?
+LIST SIZE: 259500
+Found 500 items in page_no: 521
+Entity framework left join
+LIST SIZE: 260000
+Found 500 items in page_no: 522
+Jquery how to trigger click event on href element
+LIST SIZE: 260500
+Found 500 items in page_no: 523
+MySQL pivot row into dynamic number of columns
+LIST SIZE: 261000
+Found 500 items in page_no: 524
+Bootstrap - Removing padding or margin when screen size is smaller
+LIST SIZE: 261500
+Found 500 items in page_no: 525
+How to use OKHTTP to make a post request?
+LIST SIZE: 262000
+Found 500 items in page_no: 526
+How to target Microsoft Edge with CSS?
+LIST SIZE: 262500
+Found 500 items in page_no: 527
+User Controls not showing up in the toolbox
+LIST SIZE: 263000
+Found 500 items in page_no: 528
+What are WPF Preview Events?
+LIST SIZE: 263500
+Found 500 items in page_no: 529
+Disable form submission via Enter key on only _some fields
+LIST SIZE: 264000
+Found 500 items in page_no: 530
+PHP: how can I get file creation date?
+LIST SIZE: 264500
+Found 500 items in page_no: 531
+How can I open a link in new tab (and not new window)?
+LIST SIZE: 265000
+Found 500 items in page_no: 532
+Create table in MySQL that matches another table?
+LIST SIZE: 265500
+Found 500 items in page_no: 533
+The database owner SID recorded in the master database differs from the database owner SID
+LIST SIZE: 266000
+Found 500 items in page_no: 534
+Where can I find the C89/C90 standards in PDF format?
+LIST SIZE: 266500
+Found 500 items in page_no: 535
+Playing a sound with AVAudioPlayer
+LIST SIZE: 267000
+Found 500 items in page_no: 536
+Is it possible to capture the stdout from the sh DSL command in the pipeline
+LIST SIZE: 267500
+Found 500 items in page_no: 537
+Ping a site in Python?
+LIST SIZE: 268000
+Found 500 items in page_no: 538
+Find DOM element by ID when ID contains square brackets?
+LIST SIZE: 268500
+Found 500 items in page_no: 539
+What is the difference between an Instance and an Object?
+LIST SIZE: 269000
+Found 500 items in page_no: 540
+How do you Sort a DataTable given column and direction?
+LIST SIZE: 269500
+Found 500 items in page_no: 541
+JavaScript override methods
+LIST SIZE: 270000
+Found 500 items in page_no: 542
+What are best practices for using SVG icons on Android?
+LIST SIZE: 270500
+Found 500 items in page_no: 543
+Does Dart support enumerations?
+LIST SIZE: 271000
+Found 500 items in page_no: 544
+Collectors.toMap() keyMapper -- more succinct expression?
+LIST SIZE: 271500
+Found 500 items in page_no: 545
+Why do we use autoboxing and unboxing in Java?
+LIST SIZE: 272000
+Found 500 items in page_no: 546
+Kubernetes how to make Deployment to update image
+LIST SIZE: 272500
+Found 500 items in page_no: 547
+Tools for inspecting .lib files?
+LIST SIZE: 273000
+Found 500 items in page_no: 548
+Salt Generation and open source software
+LIST SIZE: 273500
+Found 500 items in page_no: 549
+jQuery serialize does not register checkboxes
+LIST SIZE: 274000
+Found 500 items in page_no: 550
+What&#39;s the difference between &quot;virtual memory&quot; and &quot;swap space&quot;?
+LIST SIZE: 274500
+Found 500 items in page_no: 551
+targetNamespace and xmlns without prefix, what is the difference?
+LIST SIZE: 275000
+Found 500 items in page_no: 552
+What does it mean to escape a string?
+LIST SIZE: 275500
+Found 500 items in page_no: 553
+Intellij launcher doesn&#39;t work on unity?
+LIST SIZE: 276000
+Found 500 items in page_no: 554
+Convert True/False value read from file to boolean
+LIST SIZE: 276500
+Found 500 items in page_no: 555
+JsonparseException Illegal unquoted character ((CTRL-CHAR, code 10)
+LIST SIZE: 277000
+Found 500 items in page_no: 556
+How do I kill a process using Vb.NET or C#?
+LIST SIZE: 277500
+Found 500 items in page_no: 557
+With a browser, how do I know which decimal separator does the operating system use?
+LIST SIZE: 278000
+Found 500 items in page_no: 558
+getElementsByTagName() equivalent for textNodes
+LIST SIZE: 278500
+Found 500 items in page_no: 559
+Passing a variable from one php include file to another: global vs. not
+LIST SIZE: 279000
+Found 500 items in page_no: 560
+Free c# QR-Code generator
+LIST SIZE: 279500
+Found 500 items in page_no: 561
+What is the forSome keyword in Scala for?
+LIST SIZE: 280000
+Found 500 items in page_no: 562
+Difference between two element styles with Google Chrome
+LIST SIZE: 280500
+Found 500 items in page_no: 563
+Extract code country from phone number [libphonenumber]
+LIST SIZE: 281000
+Found 500 items in page_no: 564
+Are C++11 thread_local variables automatically static?
+LIST SIZE: 281500
+Found 500 items in page_no: 565
+How to write C/C++ code correctly when null pointer is not all bits zero
+LIST SIZE: 282000
+Found 500 items in page_no: 566
+What&#39;s the difference between a Table Scan and a Clustered Index Scan?
+LIST SIZE: 282500
+Found 500 items in page_no: 567
+Will my iPhone app take a performance hit if I use Objective-C for low level code?
+LIST SIZE: 283000
+Found 500 items in page_no: 568
+Why does OpenGL use degrees instead of radians?
+LIST SIZE: 283500
+Found 500 items in page_no: 569
+Android: UnknownHostException
+LIST SIZE: 284000
+Found 500 items in page_no: 570
+Subtract a value from every number in a list in Python?
+LIST SIZE: 284500
+Found 500 items in page_no: 571
+background function in Python
+LIST SIZE: 285000
+Found 500 items in page_no: 572
+Loop over tuples in bash?
+LIST SIZE: 285500
+Found 500 items in page_no: 573
+How do I get the intersection between two arrays as a new array?
+LIST SIZE: 286000
+Found 500 items in page_no: 574
+To use a read-only property or a method?
+LIST SIZE: 286500
+Found 500 items in page_no: 575
+Difference between extending LifecycleActivity,Activity,ActionbarActivity &amp; AppCompactActivity?
+LIST SIZE: 287000
+Found 500 items in page_no: 576
+Slack clean all messages (~8K) in a channel
+LIST SIZE: 287500
+Found 500 items in page_no: 577
+Visual Studio identical token highlighting
+LIST SIZE: 288000
+Found 500 items in page_no: 578
+programmatically add column &amp; rows to WPF Datagrid
+LIST SIZE: 288500
+Found 500 items in page_no: 579
+Cocoa-Touch: How do I see if two NSDates are in the same day?
+LIST SIZE: 289000
+Found 500 items in page_no: 580
+How to play videos in android from assets folder or raw folder?
+LIST SIZE: 289500
+Found 500 items in page_no: 581
+Reset IntelliJ UI to Default
+LIST SIZE: 290000
+Found 500 items in page_no: 582
+Algorithm for finding the fewest rectangles to cover a set of rectangles without overlapping
+LIST SIZE: 290500
+Found 500 items in page_no: 583
+Multiple bitbucket accounts
+LIST SIZE: 291000
+Found 500 items in page_no: 584
+WebSocket request-response subprotocol
+LIST SIZE: 291500
+Found 500 items in page_no: 585
+Conditional logic in AngularJS template
+LIST SIZE: 292000
+Found 500 items in page_no: 586
+Enum flags over 2^32
+LIST SIZE: 292500
+Found 500 items in page_no: 587
+Touch feedback with RecyclerView and CardView
+LIST SIZE: 293000
+Found 500 items in page_no: 588
+How to pass parameters rendered from backend to angular2 bootstrap method
+LIST SIZE: 293500
+Found 500 items in page_no: 589
+How do I make Emacs show blank spaces?
+LIST SIZE: 294000
+Found 500 items in page_no: 590
+state machines tutorials
+LIST SIZE: 294500
+Found 500 items in page_no: 591
+Single intent to let user take picture OR pick image from gallery in Android
+LIST SIZE: 295000
+Found 500 items in page_no: 592
+Django request get parameters
+LIST SIZE: 295500
+Found 500 items in page_no: 593
+DateTime&#39;s representation in milliseconds?
+LIST SIZE: 296000
+Found 500 items in page_no: 594
+htaccess - How to force the client&#39;s browser to clear the cache?
+LIST SIZE: 296500
+Found 500 items in page_no: 595
+Table name as a PostgreSQL function parameter
+LIST SIZE: 297000
+Found 500 items in page_no: 596
+Run one command after another, even if I suspend the first one (Ctrl-z)
+LIST SIZE: 297500
+Found 500 items in page_no: 597
+What is a TypeScript Map file?
+LIST SIZE: 298000
+Found 500 items in page_no: 598
+JWT (JSON Web Token) library for Java
+LIST SIZE: 298500
+Found 500 items in page_no: 599
+How many objects will be eligible for garbage collection after executing &quot;m1=null; m2=null;&quot;?
+LIST SIZE: 299000
+Found 500 items in page_no: 600
+How can I retrieve the page title of a webpage using Python?
+LIST SIZE: 299500
+Found 500 items in page_no: 601
+What are Reified Generics? How do they solve Type Erasure problems and why can&#39;t they be added without major changes?
+LIST SIZE: 300000
+Found 500 items in page_no: 602
+Continuous Integration for a small .NET open source project
+LIST SIZE: 300500
+Found 500 items in page_no: 603
+How to check if object has been disposed in C#
+LIST SIZE: 301000
+
+D:\Projects\IBM\v2>ls
+'Ideation Document.doc'                                      Video.mp4            indexdir2          stackoverflow.py
+ Presentation.pdf                                            __pycache__          indexer.py         stackoverflow2.py
+ Problem-Statement-2-Semantic-search-on-Stack-Overflow.pdf   classifier.py        requirements.txt   static
+ Procfile                                                    collect_dataset.py   runtime.txt        templates
+ README.md                                                   data.json            server.py
+'Undertaking Document.doc'                                   indexdir             snaps
+
+D:\Projects\IBM\v2>python server.py
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [27/Aug/2019 23:49:07] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:49:07] "[37mGET /static/github-mark.png HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:49:07] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['8055371', '130112']
+127.0.0.1 - - [27/Aug/2019 23:49:34] "[37mPOST /search HTTP/1.1[0m" 200 -
+['739993', '16819222']
+127.0.0.1 - - [27/Aug/2019 23:50:23] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:50:23] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['9835762', '5518435']
+127.0.0.1 - - [27/Aug/2019 23:50:54] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:50:54] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:51:23] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:23] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:23] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:23] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:23] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:51:27] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:27] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:27] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:27] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:27] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+['11227809', '35018999', '14023988']
+127.0.0.1 - - [27/Aug/2019 23:51:42] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:51:42] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:52:01] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:52:01] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['28305273']
+127.0.0.1 - - [27/Aug/2019 23:52:09] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:52:09] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:52:09] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:52:09] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:52:09] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:52:14] "[37mPOST /search HTTP/1.1[0m" 200 -
+ * Detected change in 'D:\\Projects\\IBM\\v2\\indexer.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+D:\Projects\IBM\v2>python server.py
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+['28305273']
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[36mGET /static/js/nouislider.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[36mGET /static/css/animate.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[36mGET /static/js/wNumb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[36mGET /static/css/nouislider.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:54:35] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:54:57] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:54:57] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:55:06] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:55:12] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:12] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:12] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:12] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:12] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:55:20] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:20] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:20] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:55:20] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:56:11] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:56:16] "[37mPOST /search HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:56:20] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:56:20] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:56:20] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:56:20] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:56:23] "[37mPOST /search HTTP/1.1[0m" 200 -
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[]
+127.0.0.1 - - [27/Aug/2019 23:57:21] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:21] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:21] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:21] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:21] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:57:28] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:28] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[]
+127.0.0.1 - - [27/Aug/2019 23:57:33] "[37mPOST /search HTTP/1.1[0m" 200 -
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:57:41] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:41] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:57:41] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Projects\\IBM\\v2\\stackoverflow.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 264-132-086
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+['9713104']
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[36mGET /static/css/animate.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[36mGET /static/css/nouislider.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[36mGET /static/js/nouislider.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [27/Aug/2019 23:58:21] "[36mGET /static/js/wNumb.js HTTP/1.1[0m" 304 -
+['2942857', '10304373']
+127.0.0.1 - - [27/Aug/2019 23:58:43] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:58:43] "[37mGET /static/css/animate.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:58:43] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:58:43] "[37mGET /static/css/nouislider.min.css HTTP/1.1[0m" 200 -
+['10569053', '19068269']
+127.0.0.1 - - [27/Aug/2019 23:58:56] "[37mPOST /search HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:58:57] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+127.0.0.1 - - [27/Aug/2019 23:59:17] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+
+D:\Projects\IBM\v2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

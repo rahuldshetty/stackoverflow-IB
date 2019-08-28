@@ -25,11 +25,12 @@ def process_date(date_string):
 def process_text(body):
     soup = BeautifulSoup(body, features="html.parser")
     text = soup.text
+    text = text.lower()
     tags = ["<strong>", "</strong>", "<code>", "</code>", "<em>", "</em>", "\n", "<p>",
-            "</p>", "'", '"', "</a>", "\n", "\\'", "\'", "<pre>", "</pre>", "\\\\", "\\", "\\n"]
+            "</p>", "'", '"', "</a>", "\n", "\\'", "\'", "<pre>", "</pre>", "\\\\", "\\", "\\n","how","what","why","whom"]
     for tag in tags:
         text = text.replace(tag, "")
-    return text.lower()
+    return text
 
 
 def get_question_by_id(id):

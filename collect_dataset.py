@@ -4,8 +4,8 @@ import re
 import json
 from indexer import *
 
-page_begin = 1
-COUNT = 100500  # change the parameter to limit the specify amount of
+page_begin = 267
+COUNT = 300500  # change the parameter to limit the specify amount of
 
 
 if __name__ == "__main__":

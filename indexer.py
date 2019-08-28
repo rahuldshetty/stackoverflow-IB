@@ -16,7 +16,7 @@ def processText(body):
     soup = BeautifulSoup(body, features="html.parser")
     text = soup.text
     tags = ["<strong>", "</strong>", "<code>", "</code>", "<em>", "</em>", "\n", "<p>",
-            "</p>", "'", '"', "</a>", "\n", "\\'", "\'", "<pre>", "</pre>", "\\\\", "\\", "\\n"]
+            "</p>", "'", '"', "</a>", "\n", "\\'", "\'", "<pre>", "</pre>", "\\\\", "\\", "\\n","?"]
     for tag in tags:
         text = text.replace(tag, "")
     return text.lower()
@@ -70,8 +70,6 @@ def get_all_question_and_answers(text, num_results=5):
         if len(item['answers']) != 0:
             QnA_list.append(item)
 
-    # QnA_list = sorted(
-    #     QnA_list, key=lambda x: x['question']['score'], reverse=True)
     return QnA_list
 
 
