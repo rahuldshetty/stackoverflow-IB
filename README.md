@@ -2,7 +2,11 @@
 Phoenix Search is a Stack Overflow Exclusive Search Engine which uses a indexed database to extract the top relevant questions based on your query. It analyses the top asnwers from the extracted questions from Stack Overflow, and then computes with a probability that the given answer is relevant or not.
 
 ## Video Link
+<<<<<<< HEAD
 ![Youtube Link](https://youtu.be/cRmtmLGRU1c)
+=======
+[![Youtube Link](https://img.youtube.com/vi/cRmtmLGRU1c/0.jpg)](https://youtu.be/cRmtmLGRU1c "Youtube Link")
+>>>>>>> f05767c4be9bb53d9756a716b94ccd35aa884df2
 
 ## Installation
 
